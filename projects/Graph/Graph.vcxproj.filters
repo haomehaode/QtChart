@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{1d944975-c53b-4168-9198-4c3d6b45bdf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\chart">
+      <UniqueIdentifier>{aa37d10d-5484-46b2-a459-ae17d38bbdb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\graph">
+      <UniqueIdentifier>{4346b31c-4b32-490a-9ccc-0322b3de8e08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\util">
+      <UniqueIdentifier>{755af64f-0683-4696-9d91-b454ed35f3e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\graph_global.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chart\data.h">
+      <Filter>src\chart</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chart\line_plot.h">
+      <Filter>src\chart</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chart\radial_plot.h">
+      <Filter>src\chart</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chart\scatter_plot.h">
+      <Filter>src\chart</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chart\SizeGripItem.h">
+      <Filter>src\chart</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chart\stock_plot.h">
+      <Filter>src\chart</Filter>
+    </ClInclude>
+    <ClInclude Include="src\chart\tool_tip.h">
+      <Filter>src\chart</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\math_define.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\util.h">
+      <Filter>src\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graph\chart_view_preview.h">
+      <Filter>src\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graph\poly_line.h">
+      <Filter>src\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graph\poly_line_preview.h">
+      <Filter>src\graph</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graph\graphics_item.h">
+      <Filter>src\graph</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\chart\axis_config.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\bar_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\chart_config.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\chart_view.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\color_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\density_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\histogram_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\line_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\pareto_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\pie_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\probability_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\qq_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\radial_plot..cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\scatter_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\series_config.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\SizeGripItem.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\stock_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\table.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\tool_tip.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\util.cpp">
+      <Filter>src\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graph\chart_view_preview.cpp">
+      <Filter>src\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graph\poly_line.cpp">
+      <Filter>src\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graph\poly_line_preview.cpp">
+      <Filter>src\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graph\graphics_item.cpp">
+      <Filter>src\graph</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\boxbar_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\interval_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\chart\axis_config.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\bar_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\chart_config.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\chart_view.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\color_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\density_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\histogram_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\pareto_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\pie_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\probability_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\qq_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\series_config.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\table.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\boxbar_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\interval_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\chart\axis_config.ui">
+      <Filter>src\chart</Filter>
+    </QtUic>
+    <QtUic Include="src\chart\chart_config.ui">
+      <Filter>src\chart</Filter>
+    </QtUic>
+    <QtUic Include="src\chart\series_config.ui">
+      <Filter>src\chart</Filter>
+    </QtUic>
+  </ItemGroup>
+</Project>

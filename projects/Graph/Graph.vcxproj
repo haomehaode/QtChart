@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\chart\boxbar_plot.h" />
+    <QtMoc Include="src\chart\interval_plot.h" />
+    <ClInclude Include="src\graph\chart_view_preview.h" />
+    <ClInclude Include="src\graph\graphics_item.h" />
+    <ClInclude Include="src\graph\poly_line.h" />
+    <ClInclude Include="src\graph\poly_line_preview.h" />
+    <ClInclude Include="src\util\math_define.h" />
+    <ClInclude Include="src\util\util.h" />
+    <QtMoc Include="src\chart\axis_config.h" />
+    <QtMoc Include="src\chart\bar_plot.h" />
+    <QtMoc Include="src\chart\chart_config.h" />
+    <QtMoc Include="src\chart\chart_view.h" />
+    <QtMoc Include="src\chart\color_plot.h" />
+    <ClInclude Include="src\chart\data.h" />
+    <QtMoc Include="src\chart\density_plot.h" />
+    <QtMoc Include="src\chart\histogram_plot.h" />
+    <ClInclude Include="src\chart\line_plot.h" />
+    <QtMoc Include="src\chart\pareto_plot.h" />
+    <QtMoc Include="src\chart\pie_plot.h" />
+    <QtMoc Include="src\chart\plot.h" />
+    <QtMoc Include="src\chart\probability_plot.h" />
+    <QtMoc Include="src\chart\qq_plot.h" />
+    <ClInclude Include="src\chart\radial_plot.h" />
+    <ClInclude Include="src\chart\scatter_plot.h" />
+    <QtMoc Include="src\chart\series_config.h" />
+    <ClInclude Include="src\chart\SizeGripItem.h" />
+    <ClInclude Include="src\chart\stock_plot.h" />
+    <QtMoc Include="src\chart\table.h" />
+    <ClInclude Include="src\chart\tool_tip.h" />
+    <ClInclude Include="src\graph_global.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\chart\axis_config.cpp" />
+    <ClCompile Include="src\chart\bar_plot.cpp" />
+    <ClCompile Include="src\chart\boxbar_plot.cpp" />
+    <ClCompile Include="src\chart\chart_config.cpp" />
+    <ClCompile Include="src\chart\chart_view.cpp" />
+    <ClCompile Include="src\chart\color_plot.cpp" />
+    <ClCompile Include="src\chart\density_plot.cpp" />
+    <ClCompile Include="src\chart\histogram_plot.cpp" />
+    <ClCompile Include="src\chart\interval_plot.cpp" />
+    <ClCompile Include="src\chart\line_plot.cpp" />
+    <ClCompile Include="src\chart\pareto_plot.cpp" />
+    <ClCompile Include="src\chart\pie_plot.cpp" />
+    <ClCompile Include="src\chart\plot.cpp" />
+    <ClCompile Include="src\chart\probability_plot.cpp" />
+    <ClCompile Include="src\chart\qq_plot.cpp" />
+    <ClCompile Include="src\chart\radial_plot..cpp" />
+    <ClCompile Include="src\chart\scatter_plot.cpp" />
+    <ClCompile Include="src\chart\series_config.cpp" />
+    <ClCompile Include="src\chart\SizeGripItem.cpp" />
+    <ClCompile Include="src\chart\stock_plot.cpp" />
+    <ClCompile Include="src\chart\table.cpp" />
+    <ClCompile Include="src\chart\tool_tip.cpp" />
+    <ClCompile Include="src\graph\chart_view_preview.cpp" />
+    <ClCompile Include="src\graph\graphics_item.cpp" />
+    <ClCompile Include="src\graph\poly_line.cpp" />
+    <ClCompile Include="src\graph\poly_line_preview.cpp" />
+    <ClCompile Include="src\util\util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\chart\axis_config.ui" />
+    <QtUic Include="src\chart\chart_config.ui" />
+    <QtUic Include="src\chart\series_config.ui" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{052877BA-DD5E-4B0A-9259-62F40345A8AE}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets;charts</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)$(IntDir)$(TargetName).dll $(SolutionDir)bin
+copy $(SolutionDir)$(IntDir)$(TargetName).lib $(SolutionDir)lib</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../include/QtCharts/private;../../include/QtCharts;../../include;.\src\graph\Internal;.\src\util;.\src\graph;.\src\chart;.\src;.\;.;.\src\extend;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Graph.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\src;.\;.\src\graph;.\src\extend;.\src\chart;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>GRAPH_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>GRAPH_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
