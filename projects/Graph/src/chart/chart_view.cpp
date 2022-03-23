@@ -39,7 +39,7 @@ namespace
 
 
 ChartView::ChartView(QChart* chart, QWidget* parent)
-	: QGraphicsView(new QGraphicsScene, parent),m_chart(chart), m_old_point(0, 0)
+	: QGraphicsView(new QGraphicsScene, parent), m_chart(chart), m_old_point(0, 0), m_translate_pos(0, 0)
 {
 	setRenderHint(QPainter::Antialiasing);
 
@@ -49,7 +49,7 @@ ChartView::ChartView(QChart* chart, QWidget* parent)
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setViewportUpdateMode(FullViewportUpdate);
-	
+
 	m_chart->setZValue(0);
 	m_chart->setSelected(true);
 	scene()->addItem(m_chart);
@@ -162,6 +162,7 @@ void ChartView::mouseMoveEvent(QMouseEvent* event)
 	else if (m_isTranslate)
 	{
 		QPointF delta = event->pos() - m_old_point;
+		m_translate_pos += QPointF(-delta.x(), delta.y());
 		m_chart->scroll(-delta.x(), delta.y());
 		m_old_point = event->pos();
 	}
@@ -180,7 +181,12 @@ void ChartView::mouseReleaseEvent(QMouseEvent* event)
 		m_chart->zoomIn(rectF);
 	}
 	else if (event->button() == Qt::RightButton)
+	{
 		m_chart->zoomReset(); //Êó±êÓÒ¼üÊÍ·Å£¬resetZoom
+		m_chart->scroll(-m_translate_pos.x(), -m_translate_pos.y());
+		m_translate_pos.setX(0);
+		m_translate_pos.setY(0);
+	}
 	else if (event->button() == Qt::MiddleButton)
 	{
 		m_isTranslate = false;

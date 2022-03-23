@@ -130,7 +130,7 @@
 copy $(SolutionDir)$(IntDir)$(TargetName).lib $(SolutionDir)lib</Command>
     </PostBuildEvent>
     <ClCompile>
-      <AdditionalIncludeDirectories>../../include/QtCharts/private;../../include/QtCharts;../../include;.\src\graph\Internal;.\src\util;.\src\graph;.\src\chart;.\src;.\;.;.\src\extend;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\src\chart;.\src\graph;.\src\util;.\src;.\;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

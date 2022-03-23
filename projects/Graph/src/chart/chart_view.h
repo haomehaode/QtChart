@@ -75,6 +75,8 @@ private:
 	QPoint m_old_point;
 	/** ÊÇ·ñÍÏ×§ */
 	bool m_isTranslate = false;
+	/** ÍÏ×§¼ÇÂ¼*/
+	QPointF m_translate_pos;
 };
 
 #endif // CHART_VIEW_H

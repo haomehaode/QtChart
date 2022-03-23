@@ -25,6 +25,10 @@ void Util::bounding_rect(const QList<QPointF>& points, double& xmin, double& xma
 		if (p.y() < ymin) ymin = p.y();
 		if (p.y() > ymax) ymax = p.y();
 	}
+	if (xmin == xmax)
+		xmax += 0.01;
+	if (ymin == ymax)
+		ymax += 0.01;
 }
 
 QRectF Util::bounding_rect(const QList<QRectF>& rects)

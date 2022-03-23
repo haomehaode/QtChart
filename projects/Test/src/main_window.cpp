@@ -78,7 +78,8 @@ void MainWindow::slot_delete_line()
 	//bar->delete_bar("1");
 
 	//table->delete_data("2");
-	interval->delete_scatter("1");
+	//interval->delete_scatter("1");
+	pareto->clear_data();
 }
 
 void MainWindow::slot_draw_line()
@@ -209,25 +210,40 @@ void MainWindow::init_chart()
 	boxbar->set_data(boxdatalist);
 
 	interval = new IntervalPlot();
-	QList<QPointF> intervallist{ QPointF(-1,0),QPointF (0,0),QPointF (2,4),QPointF (2,-3),QPointF (5,5)};
-	interval->add_scatter(intervallist, "1");
+	BoxData interval1;
+	interval1.m_name = "Jan";
+	interval1.m_value_list = QList<double>{ 2, 27, 7, 8, 18, 27, 23};
+	BoxData interval2;
+	interval2.m_name = "Feb";
+	interval2.m_value_list = QList<double>{ 1, 9, 11, 29, 20, 20, 19};
+	BoxData interval3;
+	interval3.m_name = "Mar";
+	interval3.m_value_list = QList<double>{ 10, 19, 19, 8, 17, 18, 8};
+	BoxData interval4;
+	interval4.m_name = "Apr";
+	interval4.m_value_list = QList<double>{ 32, 2, 31, 2, 31, 1, 31};
+	BoxData interval5;
+	interval5.m_name = "May";
+	interval5.m_value_list = QList<double>{ 17, 6, 18, 3, 20, 21, 20};
+	QList<BoxData> intervaldatalist{ interval1,interval2,interval3,interval4,interval5 };
+	interval->set_data(intervaldatalist);
 
 	QWidget* w = new QWidget(this);
 	QGridLayout* layout = new QGridLayout(this);
 	layout->setMargin(0);
 	layout->setSpacing(0);
 	layout->addWidget(line, 0, 0);
-	//layout->addWidget(scatter, 0, 1);
-	//layout->addWidget(probability, 0, 2);
-	//layout->addWidget(pareto, 0, 3);
-	//layout->addWidget(pie, 1, 0);
-	//layout->addWidget(qq, 1, 1);
-	//layout->addWidget(stock, 1, 2);
-	//layout->addWidget(bar, 1, 3);
-	//layout->addWidget(table, 2, 0);
-	//layout->addWidget(radial, 2, 1);
-	//layout->addWidget(boxbar, 2, 2);
-	layout->addWidget(interval,2,3);
+	layout->addWidget(scatter, 0, 1);
+	layout->addWidget(probability, 0, 2);
+	layout->addWidget(pareto, 0, 3);
+	layout->addWidget(pie, 1, 0);
+	layout->addWidget(qq, 1, 1);
+	layout->addWidget(stock, 1, 2);
+	layout->addWidget(bar, 1, 3);
+	layout->addWidget(table, 2, 0);
+	layout->addWidget(radial, 2, 1);
+	layout->addWidget(boxbar, 2, 2);
+	layout->addWidget(interval, 2, 3);
 	w->setLayout(layout);
 	setCentralWidget(w);
 }

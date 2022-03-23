@@ -1,9 +1,9 @@
-﻿#include "poly_line.h"
+﻿#pragma execution_character_set("utf-8")
 
+#include "poly_line.h"
+#include "util.h"
 #include <QPainter>
 #include <cmath>
-
-#include "util.h"
 
 PolyLine::PolyLine()
 	: GraphicsItem()

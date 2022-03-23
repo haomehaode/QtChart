@@ -1,3 +1,5 @@
+#pragma execution_character_set("utf-8")
+
 #include "boxbar_plot.h"
 #include "util.h"
 
@@ -40,7 +42,7 @@ void BoxBarPlot::set_data(QList<BoxData>& list)
 	}
 
 	m_axisX->setCategories(m_axisx_list);
-	m_axisY->setRange(0, m_max_y);
+	m_axisY->setRange(0, m_max_y * 1.1);
 }
 
 void BoxBarPlot::add_boxbar(BoxData& data)

@@ -35,10 +35,15 @@ void ParetoPlot::set_data(QList<QPointF>& list, const QString& name)
 	m_axisY_1->setRange(1, 60);
 	m_axisX->append(m_axisy_list);
 	m_axisX->setRange(m_axisy_list.first(), m_axisy_list.last());
+
+	connect(m_scatter, &QScatterSeries::hovered, this, &Plot::slot_tool_tip);
 }
 
 void ParetoPlot::clear_data()
 {
+	QList<QPointF> list = m_scatter->points();
+
+	QPointF top = m_chart->mapToPosition(QPointF(5, 17));
 	m_line->clear();
 	m_scatter->clear();
 	m_bar->clear();

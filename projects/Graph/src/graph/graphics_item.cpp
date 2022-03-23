@@ -1,3 +1,5 @@
+#pragma execution_character_set("utf-8")
+
 #include "graphics_item.h"
 #include "chart_view.h"
 

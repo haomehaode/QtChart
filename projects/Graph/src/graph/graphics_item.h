@@ -2,10 +2,11 @@
 #define GRAPHICS_ITEM_H
 
 #include "QGraphicsItem"
+#include "graph_global.h"
 
 class ChartView;
 
-class GraphicsItem : public QGraphicsObject
+class GRAPH_EXPORT GraphicsItem : public QGraphicsObject
 {
 public:
 	/** ¹¹Ôìº¯Êý */

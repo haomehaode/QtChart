@@ -1,3 +1,5 @@
+#pragma execution_character_set("utf-8")
+
 #include "color_plot.h"
 
 ColorPlot::ColorPlot(QWidget *parent)

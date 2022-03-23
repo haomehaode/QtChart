@@ -2,6 +2,7 @@
 
 #include "interval_plot.h"
 #include "chart_view.h"
+#include "util.h"
 
 IntervalPlot::IntervalPlot(QWidget *parent)
 	: Plot(parent)
@@ -13,118 +14,128 @@ IntervalPlot::IntervalPlot(QWidget *parent)
 
 IntervalPlot::~IntervalPlot()
 {
+
 }
 
-void IntervalPlot::add_scatter(QList<QPointF>& poslist, const QString& name)
+void IntervalPlot::set_data(QList<BoxData>& list)
 {
-	if (m_name2series.contains(name))
-		return;
-
-	prepare_data(poslist);
-
-	QScatterSeries* series = new QScatterSeries();
-	series->append(poslist);
-	series->setName(name);
-	m_chart->addSeries(series);
-	m_name2series[name] = series;
-	series->attachAxis(m_axisX);
-	series->attachAxis(m_axisY);
-	m_axisX->setRange(m_min_x, m_max_x);
-	m_axisY->setRange(m_min_y, m_max_y);
-
-	connect(series, &QScatterSeries::hovered, this, &Plot::slot_tool_tip);
-	connect_markers();
+	for (int i = 0; i < list.size(); i++)
+	{
+		double min, max;
+		add_interval(list[i], i, min, max);
+		m_axisx_list.append(list[i].m_name);
+		if (max > m_max_y)
+			m_max_y = max;
+		if (min < m_min_y)
+			m_min_y = min;
+	}
+	m_axisX->setCategories(m_axisx_list);
+	m_axisY->setRange(m_min_y * 0.9, m_max_y * 1.1);
 }
 
-void IntervalPlot::delete_scatter(const QString& name)
+void IntervalPlot::add_interval(BoxData& data, int index, double& y_min, double& y_max)
 {
-	if (!m_name2series.contains(name))
+	if (m_name2item.contains(data.m_name))
 		return;
-	m_chart->removeSeries(m_name2series[name]);
-	m_name2series.remove(name);
 
-	m_range[0].pop();
-	m_range[1].pop();
-	m_range[2].pop();
-	m_range[3].pop();
-
-	m_min_x = m_range[0].top();
-	m_max_x = m_range[1].top();
-	m_min_y = m_range[2].top();
-	m_max_y = m_range[3].top();
-
-	m_axisX->setRange(m_min_x, m_max_x);
-	m_axisY->setRange(m_min_y, m_max_y);
+	IntervalItem* item = new IntervalItem();
+	item->set_data(data, index);
+	item->set_chart(m_chart);
+	y_min = item->get_min();
+	y_max = item->get_max();
+	m_chartview->add_item(item);
+	m_name2item[data.m_name] = item;
 }
 
 void IntervalPlot::init_chart()
 {
-	//m_chart->legend()->hide();
+	m_chart->legend()->hide();
+	m_chart->addSeries(m_series);
 }
 
 void IntervalPlot::init_axis()
 {
-	m_axisX = new QValueAxis();
+	m_axisX = new QBarCategoryAxis();
 	m_chart->addAxis(m_axisX, Qt::AlignBottom);
+	m_series->attachAxis(m_axisX);
 
 	m_axisY = new QValueAxis();
 	m_chart->addAxis(m_axisY, Qt::AlignLeft);
+	m_series->attachAxis(m_axisY);
 }
 
 void IntervalPlot::init_series()
 {
-	m_name2series.clear();
+	m_series = new QScatterSeries();
 }
 
-void IntervalPlot::resizeEvent(QResizeEvent* event)
+//////////////////////////////////////////////////////////////////////////////
+/// 间隔图
+IntervalItem::IntervalItem()
 {
-	QPointF pos(0, 0);
-	QPointF scene_pos = m_chart->mapToPosition(pos);
-
-	QGraphicsEllipseItem* item = new QGraphicsEllipseItem(0, 0, 100, 100);//x,y 为左上角的图元局部坐标，图元中心点为0,0
-	item->setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
-	item->setZValue(1);
-	item->setPos(scene_pos);
-	item->setSelected(true);
-	m_chartview->scene()->addItem(item);
+	connect(this, &IntervalItem::signal_prepare_path, this, &IntervalItem::slot_prepare_path);
 }
 
-void IntervalPlot::prepare_data(QList<QPointF>& poslist)
+void IntervalItem::set_chart(QChart* chart)
 {
-	for (auto& pos : poslist)
-	{
-		if (pos.x() < m_min_x)
-			m_min_x = pos.x();
-		if (pos.x() > m_max_x)
-			m_max_x = pos.x();
-		if (pos.y() < m_min_y)
-			m_min_y = pos.y();
-		if (pos.y() > m_max_y)
-			m_max_y = pos.y();
-	}
-	m_range[0].push(m_min_x);
-	m_range[1].push(m_max_x);
-	m_range[2].push(m_min_y);
-	m_range[3].push(m_max_y);
+	m_chart = chart;
 }
 
-void IntervalPlot::draw_limt()
+void IntervalItem::set_data(BoxData& data, int index)
 {
-	QPointF pos(0, 0);
+	double mean, sum, min, max;
+	Util::cal_list(data.m_value_list, mean, sum, max, min);
 
-	//QPointF anchor = m_chart->mapToPosition(pos, );
+	m_list = data.m_value_list;
+	m_name = data.m_name;
+	m_min = QPointF(index, min);
+	m_max = QPointF(index, max);
+	m_mean = QPointF(index, mean);
+	m_sum = QPointF(index, sum);
+}
 
-	QPointF scene_pos2 = m_chart->mapFromParent( pos);
-	QPointF scene_pos3 = m_chart->mapFromParent(pos);
-	QPointF scene_pos4 = m_chart->mapToScene(pos);
-	QPointF scene_pos5 = m_chart->mapToScene(pos);
-	QPointF scene_pos6 = m_chart->mapToScene(pos);
-	QPointF scene_pos = m_chart->mapToScene(pos);
+double IntervalItem::get_max()
+{
+	return m_max.y();
+}
 
-	QGraphicsEllipseItem* item = new QGraphicsEllipseItem(0, 0, 100, 100);//x,y 为左上角的图元局部坐标，图元中心点为0,0
-	item->setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
-	item->setZValue(1);
-	item->setPos(scene_pos);
-	item->setSelected(true);
-	m_chartview->scene()->addItem(item);
+double IntervalItem::get_min()
+{
+	return m_min.y();
+}
+
+void IntervalItem::slot_prepare_path() 
+{
+	QLineF line(m_chart->mapToPosition(QPointF(0, 0)), m_chart->mapToPosition(QPointF(1, 0)));
+	double width = line.length();
+	QPointF top = m_chart->mapToPosition(m_max);
+	QPointF buttom = m_chart->mapToPosition(m_min);
+	QPointF center = m_chart->mapToPosition(m_mean);
+	QPointF tl = top - QPointF(width * 0.05, 0);
+	QPointF tr = top + QPointF(width * 0.05, 0);
+	QPointF bl = buttom - QPointF(width * 0.05, 0);
+	QPointF br = buttom + QPointF(width * 0.05, 0);
+
+	QPainterPath path;
+	path.moveTo(top);
+	path.lineTo(buttom);
+	path.moveTo(tl);
+	path.lineTo(tr);
+	path.moveTo(bl);
+	path.lineTo(br);
+	path.addEllipse(center, width * 0.05, width * 0.05);
+
+	m_shape = path;
+}
+
+QRectF IntervalItem::boundingRect() const
+{
+	emit signal_prepare_path();
+	return m_chart->plotArea().intersected(m_shape.boundingRect());
+}
+
+void IntervalItem::on_paint(QPainter* painter)
+{
+	painter->setClipRect(boundingRect());
+	painter->drawPath(m_shape);
 }
