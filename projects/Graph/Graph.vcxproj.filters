@@ -57,6 +57,9 @@
     <ClInclude Include="src\graph\graphics_item.h">
       <Filter>src\graph</Filter>
     </ClInclude>
+    <ClInclude Include="src\graph\color_bar.h">
+      <Filter>src\graph</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\chart\axis_config.cpp">
@@ -139,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="src\chart\interval_plot.cpp">
       <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graph\color_bar.cpp">
+      <Filter>src\graph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@
 #include "interval_plot.h"
 #include "chart_view.h"
 #include "util.h"
+#include "color_bar.h"
 
 IntervalPlot::IntervalPlot(QWidget *parent)
 	: Plot(parent)
@@ -51,6 +52,11 @@ void IntervalPlot::init_chart()
 {
 	m_chart->legend()->hide();
 	m_chart->addSeries(m_series);
+
+
+	ColorBar* item = new ColorBar();
+	item->set_chart(m_chart);
+	m_chartview->add_item(item);
 }
 
 void IntervalPlot::init_axis()
