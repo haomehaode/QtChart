@@ -63,6 +63,10 @@ protected:
 	double m_min_y = DBL_MAX;
 	/** Y 最大值 */
 	double m_max_y = DBL_MIN;
+	/** Z 最小值 */
+	double m_min_z = DBL_MAX;
+	/** Z 最大值 */
+	double m_max_z = DBL_MIN;
 };
 
 #endif // PLOT_H

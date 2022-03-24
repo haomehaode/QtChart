@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MAIN_WINDOW_H
+#define MAIN_WINDOW_H
 
 #include <QMainWindow>
 #include "ui_main_window.h"
@@ -15,6 +16,7 @@ class Table;
 class RadialPlot;
 class BoxBarPlot;
 class IntervalPlot;
+class ColorPlot;
 
 class MainWindow : public QMainWindow
 {
@@ -47,4 +49,7 @@ private:
 	RadialPlot* radial = nullptr;
 	BoxBarPlot* boxbar = nullptr;
 	IntervalPlot* interval = nullptr;
+	ColorPlot* color = nullptr;
 };
+
+#endif // MAIN_WINDOW_H

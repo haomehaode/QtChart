@@ -15,6 +15,7 @@
 #include "radial_plot.h"
 #include "boxbar_plot.h"
 #include "interval_plot.h"
+#include "color_plot.h"
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -212,21 +213,128 @@ void MainWindow::init_chart()
 	interval = new IntervalPlot();
 	BoxData interval1;
 	interval1.m_name = "Jan";
-	interval1.m_value_list = QList<double>{ 2, 27, 7, 8, 18, 27, 23};
+	interval1.m_value_list = QList<double>{ 2, 27, 7, 8, 18, 27, 23 };
 	BoxData interval2;
 	interval2.m_name = "Feb";
-	interval2.m_value_list = QList<double>{ 1, 9, 11, 29, 20, 20, 19};
+	interval2.m_value_list = QList<double>{ 1, 9, 11, 29, 20, 20, 19 };
 	BoxData interval3;
 	interval3.m_name = "Mar";
-	interval3.m_value_list = QList<double>{ 10, 19, 19, 8, 17, 18, 8};
+	interval3.m_value_list = QList<double>{ 10, 19, 19, 8, 17, 18, 8 };
 	BoxData interval4;
 	interval4.m_name = "Apr";
-	interval4.m_value_list = QList<double>{ 32, 2, 31, 2, 31, 1, 31};
+	interval4.m_value_list = QList<double>{ 32, 2, 31, 2, 31, 1, 31 };
 	BoxData interval5;
 	interval5.m_name = "May";
-	interval5.m_value_list = QList<double>{ 17, 6, 18, 3, 20, 21, 20};
+	interval5.m_value_list = QList<double>{ 17, 6, 18, 3, 20, 21, 20 };
 	QList<BoxData> intervaldatalist{ interval1,interval2,interval3,interval4,interval5 };
 	interval->set_data(intervaldatalist);
+
+	color = new ColorPlot();
+	QList<ThirdDData> color_list{
+
+ThirdDData(7.1908	,1.371	,8.35),
+ThirdDData(3.3199	,9.5596	,4.77),
+ThirdDData(6.6349	,2.802	,9.29),
+ThirdDData(7.4314	,2.7183	,4.13),
+ThirdDData(6.7846	,3.6523	,6.74),
+ThirdDData(5.3984	,4.6723	,3.21),
+ThirdDData(8.5625	,2.1835	,6.38),
+ThirdDData(1.0853	,1.2124	,3.8),
+ThirdDData(9.4728	,3.9189	,3.57),
+ThirdDData(5.5756	,8.3325	,5.36),
+ThirdDData(4.2799	,8.475	,7.17),
+ThirdDData(8.909	,8.6787	,3.68),
+ThirdDData(6.5997	,5.3281	,1.91),
+ThirdDData(5.2863	,5.495	,4.96),
+ThirdDData(5.4844	,3.8975	,3.43),
+ThirdDData(1.9507	,8.5468	,6.16),
+ThirdDData(7.4732	,5.7603	,9.43),
+ThirdDData(4.2143	,7.0386	,5.45),
+ThirdDData(4.5841	,9.3584	,3.08),
+ThirdDData(6.3912	,5.2463	,2.53),
+ThirdDData(3.9729	,2.2913	,4.07),
+ThirdDData(8.7678	,5.2947	,2.68),
+ThirdDData(1.4079	,7.0609	,2.97),
+ThirdDData(9.659	,6.9622	,6.85),
+ThirdDData(4.0624	,8.2727	,6.97),
+ThirdDData(5.2148	,3.892	,5.67),
+ThirdDData(2.938	,3.476	,4.05),
+ThirdDData(8.5964	,4.5718	,1.44),
+ThirdDData(7.2144	,2.8656	,1.1),
+ThirdDData(9.7124	,5.5643	,2.02),
+ThirdDData(5.0421	,1.3184	,9.07),
+ThirdDData(4.4336	,5.6822	,3.17),
+ThirdDData(3.0745	,8.6957	,6.67),
+ThirdDData(7.4707	,7.7891	,5.55),
+ThirdDData(5.6016	,2.7527	,2.56),
+ThirdDData(1.2459	,4.5429	,5.98),
+ThirdDData(8.7453	,7.4326	,5.88),
+ThirdDData(6.6394	,1.2535	,4.96),
+ThirdDData(4.7364	,4.3589	,1.02),
+ThirdDData(9.5998	,1.6505	,2.99),
+ThirdDData(5.2584	,7.3137	,8.77),
+ThirdDData(4.8707	,2.2501	,5.48),
+ThirdDData(1.5872	,2.9534	,6.99),
+ThirdDData(2.4531	,9.8417	,2.87),
+ThirdDData(1.7778	,1.26	,2.62),
+ThirdDData(9.5608	,2.5392	,4.31),
+ThirdDData(4.0159	,2.4654	,2.36),
+ThirdDData(3.5658	,7.8506	,3.59),
+ThirdDData(3.1082	,8.0051	,7.34),
+ThirdDData(8.8486	,4.9119	,2.93),
+ThirdDData(3.2443	,9.6056	,4.59),
+ThirdDData(6.8583	,9.4868	,4.63),
+ThirdDData(4.734	,3.8559	,2.4),
+ThirdDData(7.1793	,6.6535	,7.6),
+ThirdDData(4.4682	,8.6705	,3.45),
+ThirdDData(3.5651	,3.3115	,3.13),
+ThirdDData(2.1501	,6.0707	,6.88),
+ThirdDData(7.4924	,2.7056	,7.06),
+ThirdDData(5.5233	,1.9889	,3.38),
+ThirdDData(4.8493	,5.269	,6.55),
+ThirdDData(8.7686	,8.1083	,8.9),
+ThirdDData(4.9266	,6.7548	,8.15),
+ThirdDData(4.7555	,3.9511	,5.01),
+ThirdDData(4.4882	,8.5719	,5.84),
+ThirdDData(5.7458	,9.6899	,8.71),
+ThirdDData(4.7992	,2.2714	,9.53),
+ThirdDData(7.5479	,4.0813	,7.4),
+ThirdDData(7.5935	,1.3604	,7.13),
+ThirdDData(7.1035	,3.5131	,9.36),
+ThirdDData(5.7367	,5.5905	,4.5),
+ThirdDData(4.5456	,5.6897	,8.24),
+ThirdDData(5.0419	,1.1654	,9.96),
+ThirdDData(1.5481	,4.8748	,9.95),
+ThirdDData(4.6068	,9.9738	,1.99),
+ThirdDData(1.4562	,5.9872	,6.26),
+ThirdDData(9.2189	,3.3425	,6.13),
+ThirdDData(8.8734	,9.7743	,1.34),
+ThirdDData(9.7336	,1.9286	,7.65),
+ThirdDData(9.5662	,7.9747	,8.76),
+ThirdDData(2.2144	,7.0877	,8.11),
+ThirdDData(8.9582	,8.4553	,3.15),
+ThirdDData(1.1927	,2.5109	,2.95),
+ThirdDData(8.0102	,5.8046	,7.3),
+ThirdDData(4.2547	,8.4029	,9.66),
+ThirdDData(3.8141	,8.0253	,5.94),
+ThirdDData(2.2334	,6.1691	,3.73),
+ThirdDData(5.1633	,3.4316	,3.98),
+ThirdDData(2.9822	,5.0633	,9.15),
+ThirdDData(6.8467	,6.0755	,7.37),
+ThirdDData(6.4997	,2.2398	,5.49),
+ThirdDData(6.569	,7.7273	,5.74),
+ThirdDData(4.3138	,6.1526	,8.23),
+ThirdDData(8.2114	,3.4949	,4.78),
+ThirdDData(7.8527	,4.7712	,4.74),
+ThirdDData(3.3897	,9.2995	,2.27),
+ThirdDData(5.0169	,1.1223	,8.81),
+ThirdDData(8.4492	,6.3313	,6.31),
+ThirdDData(4.7655	,2.0641	,6.54),
+ThirdDData(2.647	,6.5189	,8.05),
+ThirdDData(3.1885, 8.0106, 9.62) 
+};
+	color->set_data(color_list);
+
 
 	QWidget* w = new QWidget(this);
 	QGridLayout* layout = new QGridLayout(this);
@@ -243,7 +351,8 @@ void MainWindow::init_chart()
 	//layout->addWidget(table, 2, 0);
 	//layout->addWidget(radial, 2, 1);
 	//layout->addWidget(boxbar, 2, 2);
-	layout->addWidget(interval, 2, 3);
+	//layout->addWidget(interval, 2, 3);
+	layout->addWidget(color, 3, 0);
 	w->setLayout(layout);
 	setCentralWidget(w);
 }

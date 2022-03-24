@@ -6,6 +6,7 @@
 ColorBar::ColorBar()
 	: GraphicsItem()
 {
+	init_colors();
 }
 
 void ColorBar::set_orientation(Qt::Orientation orientation)
@@ -16,13 +17,6 @@ void ColorBar::set_orientation(Qt::Orientation orientation)
 Qt::Orientation ColorBar::orientation() const
 {
 	return m_orientation;
-}
-
-void ColorBar::set_color_range(const QColor& light, const QColor& dark)
-{
-	m_light = light;
-	m_dark = dark;
-	update_colors();  
 }
 
 void ColorBar::set_value_range(double min, double max)
@@ -79,7 +73,6 @@ void ColorBar::draw_color_bar(QPainter* painter,QRectF rect)
 	int h1, s1, v1;
 	int h2, s2, v2;
 
-
 	m_light.getHsv(&h1, &s1, &v1);
 	m_dark.getHsv(&h2, &s2, &v2);
 
@@ -100,22 +93,14 @@ void ColorBar::draw_color_bar(QPainter* painter,QRectF rect)
 	{
 		QRect section;
 		if (m_orientation == Qt::Horizontal)
-		{
-			section.setRect(rect.x() + i * sectionSize, rect.y(),
-				sectionSize, rect.height());
-		}
+			section.setRect(rect.x() + i * sectionSize, rect.y(), sectionSize, rect.height());
 		else
-		{
-			section.setRect(rect.x(), rect.y() + i * sectionSize,
-				rect.width(), sectionSize);
-		}
+			section.setRect(rect.x(), rect.y() + i * sectionSize, rect.width(), sectionSize);
 
 		const double ratio = i / (double)numIntervalls;
 
 		QColor c;
-		c.setHsv(h1 + qRound(ratio * (h2 - h1)),
-			s1 + qRound(ratio * (s2 - s1)),
-			v1 + qRound(ratio * (v2 - v1)));
+		c.setHsv(h1 + qRound(ratio * (h2 - h1)),s1 + qRound(ratio * (s2 - s1)),v1 + qRound(ratio * (v2 - v1)));
 		painter->fillRect(section, c);
 	}
 	painter->restore();
@@ -131,28 +116,34 @@ void ColorBar::draw_color_title(QPainter* painter, QRectF rect)
 	}
 }
 
-void ColorBar::update_colors()
+void ColorBar::init_colors()
 {
-	colors.clear();
-
-	int h1, s1, v1;
-	int h2, s2, v2;
-	m_light.getHsv(&h1, &s1, &v1);
-	m_dark.getHsv(&h2, &s2, &v2);
-
-	const int sectionSize = 2;
-
-	int numIntervalls;
-	if (m_orientation == Qt::Horizontal)
-		numIntervalls = boundingRect().width() / sectionSize;
-	else
-		numIntervalls = boundingRect().height() / sectionSize;
-	for (int i = 0; i < numIntervalls; i++)
+	float colorBarLength = 343.0;
+	float tempLength = colorBarLength / 4;
+	QColor color;
+	for (int i = 0; i < tempLength / 2; i++)// jet
 	{
-		const double ratio = i / (double)numIntervalls;
-		QColor c;
-		c.setHsv(h1 + qRound(ratio * (h2 - h1)), s1 + qRound(ratio * (s2 - s1)), v1 + qRound(ratio * (v2 - v1)));
-		colors.push_front(c);
+		color.setRgbF(0, 0, (tempLength / 2 + i) / tempLength);
+		colors.push_back(color);
+	}
+	for (int i = tempLength / 2 + 1; i < tempLength / 2 + tempLength; i++)// jet
+	{
+		color.setRgbF(0, (i - tempLength / 2) / tempLength, 1);
+		colors.push_back(color);
+	}
+	for (int i = tempLength / 2 + tempLength + 1; i < tempLength / 2 + 2 * tempLength; i++)// jet
+	{
+		color.setRgbF((i - tempLength - tempLength / 2) / tempLength, 1, (tempLength * 2 + tempLength / 2 - i) / tempLength);
+		colors.push_back(color);
+	}
+	for (int i = tempLength / 2 + 2 * tempLength + 1; i < tempLength / 2 + 3 * tempLength; i++)// jet
+	{
+		color.setRgbF(1, (tempLength * 3 + tempLength / 2 - i) / tempLength, 0);
+		colors.push_back(color);
+	}
+	for (int i = tempLength / 2 + 3 * tempLength + 1; i < colorBarLength; i++)// jet
+	{
+		color.setRgbF((colorBarLength - i + tempLength / 2) / (tempLength), 0, 0);
+		colors.push_back(color);
 	}
 }
-

@@ -12,7 +12,7 @@ class GRAPH_EXPORT ScatterPlot: public Plot
 
 public:
 
-	ScatterPlot(QWidget* parent = Q_NULLPTR);
+	ScatterPlot(QWidget* parent = nullptr);
 
 	~ScatterPlot();
 

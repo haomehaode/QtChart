@@ -16,8 +16,6 @@ public:
 
 	Qt::Orientation orientation() const;
 
-	void set_color_range(const QColor& light, const QColor& dark);
-
 	void set_value_range(double min, double max);
 
 	QColor getColor(double value);
@@ -34,7 +32,7 @@ protected:
 
 	void draw_color_title(QPainter* painter, QRectF rect);
 
-	void update_colors();
+	void init_colors();
 
 private:
 
