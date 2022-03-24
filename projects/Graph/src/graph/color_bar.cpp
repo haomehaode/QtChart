@@ -14,11 +14,6 @@ void ColorBar::set_orientation(Qt::Orientation orientation)
 	m_orientation = orientation;
 }
 
-Qt::Orientation ColorBar::orientation() const
-{
-	return m_orientation;
-}
-
 void ColorBar::set_value_range(double min, double max)
 {
 	m_min = min;
@@ -118,8 +113,8 @@ void ColorBar::draw_color_title(QPainter* painter, QRectF rect)
 
 void ColorBar::init_colors()
 {
-	float colorBarLength = 343.0;
-	float tempLength = colorBarLength / 4;
+	int colorBarLength = 343;
+	int tempLength = colorBarLength / 4;
 	QColor color;
 	for (int i = 0; i < tempLength / 2; i++)// jet
 	{

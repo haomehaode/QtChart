@@ -90,4 +90,16 @@ enum BoxBarType
 	MIN
 };
 
+/** √‹∂»µ„ */
+struct DensityPoint
+{
+	DensityPoint(double a, double b)
+	{
+		x = a;
+		y = b;
+	}
+	qreal x;
+	qreal y;
+	int pts = 1;
+};
 #endif //DATA_H

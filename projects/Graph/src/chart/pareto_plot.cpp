@@ -41,9 +41,6 @@ void ParetoPlot::set_data(QList<QPointF>& list, const QString& name)
 
 void ParetoPlot::clear_data()
 {
-	QList<QPointF> list = m_scatter->points();
-
-	QPointF top = m_chart->mapToPosition(QPointF(5, 17));
 	m_line->clear();
 	m_scatter->clear();
 	m_bar->clear();

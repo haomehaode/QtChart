@@ -16,6 +16,7 @@
 #include "boxbar_plot.h"
 #include "interval_plot.h"
 #include "color_plot.h"
+#include "density_plot.h"
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -335,6 +336,15 @@ ThirdDData(3.1885, 8.0106, 9.62)
 };
 	color->set_data(color_list);
 
+	density = new DensityPlot();
+	QList<QPointF> densitylist;
+	for (int i = 0; i <100; i++) {
+		double x = qrand() % 10;
+		double y = qrand() % 10;
+		QPointF p(x,y);
+		densitylist.append(p);
+	}
+	density->set_data(densitylist);
 
 	QWidget* w = new QWidget(this);
 	QGridLayout* layout = new QGridLayout(this);
@@ -352,7 +362,8 @@ ThirdDData(3.1885, 8.0106, 9.62)
 	//layout->addWidget(radial, 2, 1);
 	//layout->addWidget(boxbar, 2, 2);
 	//layout->addWidget(interval, 2, 3);
-	layout->addWidget(color, 3, 0);
+	//layout->addWidget(color, 3, 0);
+	layout->addWidget(density, 3, 1);
 	w->setLayout(layout);
 	setCentralWidget(w);
 }

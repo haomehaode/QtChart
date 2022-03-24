@@ -14,8 +14,6 @@ public:
 
 	void set_orientation(Qt::Orientation orientation);
 
-	Qt::Orientation orientation() const;
-
 	void set_value_range(double min, double max);
 
 	QColor getColor(double value);
