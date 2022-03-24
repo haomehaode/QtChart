@@ -57,8 +57,8 @@
     <ClInclude Include="src\graph\graphics_item.h">
       <Filter>src\graph</Filter>
     </ClInclude>
-    <ClInclude Include="src\graph\color_bar.h">
-      <Filter>src\graph</Filter>
+    <ClInclude Include="src\chart\color_bar.h">
+      <Filter>src\chart</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -143,8 +143,11 @@
     <ClCompile Include="src\chart\interval_plot.cpp">
       <Filter>src\chart</Filter>
     </ClCompile>
-    <ClCompile Include="src\graph\color_bar.cpp">
-      <Filter>src\graph</Filter>
+    <ClCompile Include="src\chart\color_bar.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chart\radar_plot.cpp">
+      <Filter>src\chart</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +197,9 @@
       <Filter>src\chart</Filter>
     </QtMoc>
     <QtMoc Include="src\chart\interval_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\radar_plot.h">
       <Filter>src\chart</Filter>
     </QtMoc>
   </ItemGroup>

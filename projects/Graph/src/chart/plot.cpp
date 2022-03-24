@@ -5,10 +5,13 @@
 #include "chart_view.h"
 #include "poly_line_preview.h"
 
-Plot::Plot(QWidget *parent)
+Plot::Plot(bool IsPolar, QWidget *parent)
 	: QWidget(parent)
 {
-	m_chart = new QChart();
+	if (IsPolar)
+		m_chart = new QPolarChart();
+	else
+		m_chart = new QChart();
 	m_chartview = new ChartView(m_chart);
 
 	QHBoxLayout* layout = new QHBoxLayout;

@@ -13,8 +13,9 @@
   <ItemGroup>
     <QtMoc Include="src\chart\boxbar_plot.h" />
     <QtMoc Include="src\chart\interval_plot.h" />
+    <ClInclude Include="src\chart\color_bar.h" />
+    <QtMoc Include="src\chart\radar_plot.h" />
     <ClInclude Include="src\graph\chart_view_preview.h" />
-    <ClInclude Include="src\graph\color_bar.h" />
     <ClInclude Include="src\graph\graphics_item.h" />
     <ClInclude Include="src\graph\poly_line.h" />
     <ClInclude Include="src\graph\poly_line_preview.h" />
@@ -49,6 +50,7 @@
     <ClCompile Include="src\chart\boxbar_plot.cpp" />
     <ClCompile Include="src\chart\chart_config.cpp" />
     <ClCompile Include="src\chart\chart_view.cpp" />
+    <ClCompile Include="src\chart\color_bar.cpp" />
     <ClCompile Include="src\chart\color_plot.cpp" />
     <ClCompile Include="src\chart\density_plot.cpp" />
     <ClCompile Include="src\chart\histogram_plot.cpp" />
@@ -59,6 +61,7 @@
     <ClCompile Include="src\chart\plot.cpp" />
     <ClCompile Include="src\chart\probability_plot.cpp" />
     <ClCompile Include="src\chart\qq_plot.cpp" />
+    <ClCompile Include="src\chart\radar_plot.cpp" />
     <ClCompile Include="src\chart\radial_plot..cpp" />
     <ClCompile Include="src\chart\scatter_plot.cpp" />
     <ClCompile Include="src\chart\series_config.cpp" />
@@ -67,7 +70,6 @@
     <ClCompile Include="src\chart\table.cpp" />
     <ClCompile Include="src\chart\tool_tip.cpp" />
     <ClCompile Include="src\graph\chart_view_preview.cpp" />
-    <ClCompile Include="src\graph\color_bar.cpp" />
     <ClCompile Include="src\graph\graphics_item.cpp" />
     <ClCompile Include="src\graph\poly_line.cpp" />
     <ClCompile Include="src\graph\poly_line_preview.cpp" />

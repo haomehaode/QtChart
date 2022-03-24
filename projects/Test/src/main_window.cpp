@@ -17,6 +17,7 @@
 #include "interval_plot.h"
 #include "color_plot.h"
 #include "density_plot.h"
+#include "radar_plot.h"
 
 MainWindow::MainWindow(QWidget *parent)
 	: QMainWindow(parent)
@@ -346,24 +347,37 @@ ThirdDData(3.1885, 8.0106, 9.62)
 	}
 	density->set_data(densitylist);
 
+
+	radar = new RadarPlot();
+	QStringList radarlist;
+	radarlist << "一月" << "二月" << "三月" << "四月" << "五月";
+	radar->set_radar(radarlist);
+	QList<double> radar1{ 1, 2, 3, 4, 5 };
+	radar->add_radar(radar1, "1");
+	QList<double> radar2{ 5, 6, 9, 8, 7};
+	radar->add_radar(radar2,"2");
+
+
+
 	QWidget* w = new QWidget(this);
 	QGridLayout* layout = new QGridLayout(this);
 	layout->setMargin(0);
 	layout->setSpacing(0);
-	//layout->addWidget(line, 0, 0);
-	//layout->addWidget(scatter, 0, 1);
-	//layout->addWidget(probability, 0, 2);
-	//layout->addWidget(pareto, 0, 3);
-	//layout->addWidget(pie, 1, 0);
-	//layout->addWidget(qq, 1, 1);
-	//layout->addWidget(stock, 1, 2);
-	//layout->addWidget(bar, 1, 3);
-	//layout->addWidget(table, 2, 0);
-	//layout->addWidget(radial, 2, 1);
-	//layout->addWidget(boxbar, 2, 2);
-	//layout->addWidget(interval, 2, 3);
-	//layout->addWidget(color, 3, 0);
+	layout->addWidget(line, 0, 0);
+	layout->addWidget(scatter, 0, 1);
+	layout->addWidget(probability, 0, 2);
+	layout->addWidget(pareto, 0, 3);
+	layout->addWidget(pie, 1, 0);
+	layout->addWidget(qq, 1, 1);
+	layout->addWidget(stock, 1, 2);
+	layout->addWidget(bar, 1, 3);
+	layout->addWidget(table, 2, 0);
+	layout->addWidget(radial, 2, 1);
+	layout->addWidget(boxbar, 2, 2);
+	layout->addWidget(interval, 2, 3);
+	layout->addWidget(color, 3, 0);
 	layout->addWidget(density, 3, 1);
+	layout->addWidget(radar, 3, 2);
 	w->setLayout(layout);
 	setCentralWidget(w);
 }

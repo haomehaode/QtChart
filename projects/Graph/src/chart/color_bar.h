@@ -5,6 +5,22 @@
 #include "graphics_item.h"
 #include <QChart>
 
+enum ColorBarType
+{
+	Gray,
+	Jet,
+	Hsv,
+	Hot
+};
+
+enum LocationType
+{
+	Top,
+	Bottom,
+	Left,
+	Right
+};
+
 class ColorBar : public GraphicsItem
 {
 
@@ -12,13 +28,15 @@ public:
 
 	ColorBar();
 
-	void set_orientation(Qt::Orientation orientation);
+	void set_dock_area(LocationType area);
 
 	void set_value_range(double min, double max);
 
 	QColor getColor(double value);
 
 	void set_chart(QChart* chart);
+
+	void set_type(ColorBarType type);
 
 protected:
 
@@ -34,19 +52,23 @@ protected:
 
 private:
 
-	Qt::Orientation m_orientation = Qt::Vertical;
-
-	QColor m_light = Qt::red;
-
-	QColor m_dark = Qt::darkBlue;
+	LocationType m_area = Right;
 
 	double m_min = 0;
 
 	double m_max = 100;
 
-	QVector<QColor> colors;
+	QVector<QColor> gray_colors;
+
+	QVector<QColor> jet_colors;
+
+	QVector<QColor> hsv_colors;
+
+	QVector<QColor> hot_colors;
 
 	QChart* m_chart = nullptr;
+
+	ColorBarType m_type = Jet;
 };
 
 #endif // COLOR_BAR_H

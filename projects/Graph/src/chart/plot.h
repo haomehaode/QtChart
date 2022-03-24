@@ -3,6 +3,7 @@
 
 #include "graph_global.h"
 #include <QtCharts/QChart>
+#include <QtCharts/QPolarChart>
 #include <QtCharts/QLegendMarker>
 #include <QBoxLayout>
 #include <QWidget>
@@ -18,7 +19,7 @@ class GRAPH_EXPORT Plot : public QWidget
 
 public:
 
-	Plot(QWidget *parent = nullptr);
+	Plot(bool IsPolar=false, QWidget *parent = nullptr);
 
 	~Plot();
 
