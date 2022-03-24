@@ -50,7 +50,15 @@ QQ图
 
 自定义绘制
 
-![image](https://user-images.githubusercontent.com/32051731/159617697-f9b38cd4-6ef2-4031-a0d5-a95159a328ef.png)
+![image](https://user-images.githubusercontent.com/32051731/159877859-430dc7ac-2e62-4cca-afdf-ad51bda12b92.png)
+
+彩色点图
+
+![image](https://user-images.githubusercontent.com/32051731/159877245-f5b7c5c1-2f27-4d35-a9d5-9a51f7c6769e.png)
+
+密度点图
+
+![image](https://user-images.githubusercontent.com/32051731/159877443-1f42bb66-74da-4910-882a-aa544d413a39.png)
 
 
 
