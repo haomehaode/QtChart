@@ -10,8 +10,6 @@ HistogramPlot::HistogramPlot(QWidget *parent)
 	init_series();
 	init_chart();
 	init_axis();
-
-	QList<QVector<QPointF>> data;
 }
 
 HistogramPlot::~HistogramPlot()
@@ -147,5 +145,18 @@ QRectF HistogramItem::boundingRect() const
 void HistogramItem::on_paint(QPainter* painter)
 {
 	painter->setClipRect(boundingRect());
+
+	QColor color(32, 159, 223);
+
+	//QPen pen;
+	//pen.setColor(color);
+	//pen.setStyle(Qt::SolidLine);
+	//painter->setPen(pen);
+
+	QBrush brush;
+	brush.setStyle(Qt::SolidPattern);
+	brush.setColor(color);
+	painter->setBrush(brush);
+
 	painter->drawPath(m_shape);
 }
