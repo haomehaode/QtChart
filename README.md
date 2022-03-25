@@ -64,6 +64,11 @@ QQ图
 
 ![image](https://user-images.githubusercontent.com/32051731/160069776-01773325-6b68-45a2-877d-0da19467ed15.png)
 
+直方图
+
+![image](https://user-images.githubusercontent.com/32051731/160144223-2ae6a8c2-6285-402a-a264-f4befccd2e59.png)
+
+
 
 
 
