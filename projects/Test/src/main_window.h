@@ -19,6 +19,7 @@ class IntervalPlot;
 class ColorPlot;
 class DensityPlot;
 class RadarPlot;
+class HistogramPlot;
 
 class MainWindow : public QMainWindow
 {
@@ -54,6 +55,7 @@ private:
 	ColorPlot* color = nullptr;
 	DensityPlot* density = nullptr;
 	RadarPlot* radar = nullptr;
+	HistogramPlot* histogram = nullptr;
 };
 
 #endif // MAIN_WINDOW_H

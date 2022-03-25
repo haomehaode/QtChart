@@ -7,6 +7,8 @@
 #include <QCategoryAxis>
 #include <QValueAxis>
 #include <QLineSeries>
+#include <QScatterSeries>
+#include <QAreaSeries>
 
 enum RadarType
 {
@@ -14,17 +16,37 @@ enum RadarType
 	Spider		//蜘蛛网图
 };
 
-enum PointTpye
+enum DrawTpye
 {
-	ScatterPoints = 0,	//散点图
-	LinePoints			//连线图
+	Scatter = 0,	//散点图
+	Line,			//连线图
+	Area			//区域图
 };
 
-enum FillType
+//////////////////////////////////////////////////////////////////////////////
+/// 雷达图
+class RadarItem :public GraphicsItem
 {
-	Fill = 0,	//填充
-	Empty		//空
+	Q_OBJECT
+
+public:
+	RadarItem();
+	void set_chart(QChart* chart);
+	void set_radial(int radial);
+	void set_angular(int angular);
+
+protected:
+	QRectF boundingRect() const override;
+	void on_paint(QPainter* painter) override;
+
+private:
+	QChart* m_chart = nullptr;
+	/** 雷达项数 */
+	int m_angular = 5;
+	/** 雷达圈数 */
+	int m_radial = 6;
 };
+
 
 class GRAPH_EXPORT RadarPlot : public Plot
 {
@@ -42,6 +64,9 @@ public:
 
 	void delete_radar(const QString& name);
 
+	void set_radar_type(RadarType type);
+
+
 protected:
 
 	virtual void init_chart() override;
@@ -51,16 +76,16 @@ protected:
 	virtual void init_series() override;
 
 private:
-	/** 角度值 */
+	/** 蜘蛛网图 */
+	RadarItem* item = nullptr;
+	/** 角度值/雷达项 */
 	QCategoryAxis* m_angularAxis = nullptr;
-	/** 雷达值 */
+	/** 雷达值/雷达圈数 */
 	QValueAxis* m_radialAxis = nullptr;
 	/** 图类型 */
-	RadarType m_radartype = Radar;
+	RadarType m_radartype = Spider;
 	/** 线类型 */
-	PointTpye m_pointstype = LinePoints;
-	/** 填充类型 */
-	FillType m_filltype = Fill;
+	DrawTpye m_drawtype = Line;
 	/** 雷达项数 */
 	int count = 0;
 	/** 名称和系列映射 */
