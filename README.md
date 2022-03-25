@@ -60,6 +60,11 @@ QQ图
 
 ![image](https://user-images.githubusercontent.com/32051731/159877443-1f42bb66-74da-4910-882a-aa544d413a39.png)
 
+雷达图
+
+![image](https://user-images.githubusercontent.com/32051731/160050033-d0556950-b151-4e96-8268-439707230a9f.png)
+
+
 
 
 
