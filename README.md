@@ -62,7 +62,7 @@ QQ图
 
 雷达图
 
-![image](https://user-images.githubusercontent.com/32051731/160050033-d0556950-b151-4e96-8268-439707230a9f.png)
+![image](https://user-images.githubusercontent.com/32051731/160069776-01773325-6b68-45a2-877d-0da19467ed15.png)
 
 
 
