@@ -54,7 +54,7 @@ void ProbabilityPlot::add_data(QList<double>& list, const QString& name)
 
 void ProbabilityPlot::init_chart()
 {
-	m_chart->legend()->hide();
+	//m_chart->legend()->hide();
 	m_chart->addSeries(m_line_center);
 	m_chart->addSeries(m_scatter);
 }
@@ -99,15 +99,19 @@ void ProbabilityPlot::init_axis()
 void ProbabilityPlot::init_series()
 {
 	m_line_center = new QLineSeries(m_chart);
+	m_line_center->setName("参照线");
 	m_line_center->append(QPointF(0, 0));
 
 	m_line_top = new QLineSeries(m_chart);
+	m_line_top->setName("上线百分位数");
 	m_line_top->append(QPointF(0, 0));
 
 	m_line_bottom = new QLineSeries(m_chart);
+	m_line_bottom->setName("下线百分位数");
 	m_line_bottom->append(QPointF(0, 0));
 
 	m_scatter = new QScatterSeries();
+	m_scatter->setName("百分数位");
 	m_scatter->append(QPointF(0, 0));
 	m_scatter->setMarkerSize(10);
 	m_scatter->setBorderColor(Qt::transparent);

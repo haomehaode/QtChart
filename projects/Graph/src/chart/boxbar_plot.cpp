@@ -78,7 +78,6 @@ void BoxBarPlot::delete_boxbar(const QString& name)
 
 void BoxBarPlot::init_chart()
 {
-	m_chart->legend()->hide();
 	m_chart->addSeries(m_series);
 }
 

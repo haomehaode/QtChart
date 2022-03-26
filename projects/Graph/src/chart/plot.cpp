@@ -72,6 +72,27 @@ void Plot::draw_arrows()
 	new ArrowsPreview(m_chartview);
 }
 
+void Plot::resizeEvent(QResizeEvent* event)
+{
+	//遍历每一个图例
+	//const auto markers = m_chart->legend()->markers();
+	//for (QLegendMarker* marker : markers)
+	//{
+	//	if (marker = markers[1])
+	//		marker->setVisible(false);
+	//}
+
+	//QLegend* legend = m_chart->legend();
+	//if (legend->isAttachedToChart()) {
+	//	legend->detachFromChart();
+	//	m_chart->legend()->setGeometry(m_chart->plotArea().x(), m_chart->plotArea().y(), 100, 100);
+	//	m_chart->legend()->setBackgroundVisible(true);
+	//	m_chart->legend()->setBrush(QBrush(QColor(128, 128, 128, 128)));
+	//	m_chart->legend()->setPen(QPen(QColor(192, 192, 192, 192)));
+	//	m_chart->legend()->update();
+	//}
+}
+
 void Plot::slot_handle_marker_clicked()
 {
 	QLegendMarker* marker = qobject_cast<QLegendMarker*> (sender());

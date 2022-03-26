@@ -37,6 +37,10 @@
    <addaction name="action_delete_line"/>
    <addaction name="action_draw_line"/>
    <addaction name="action_draw_arrows"/>
+   <addaction name="vertical_action"/>
+   <addaction name="horizontal_action"/>
+   <addaction name="delete_action"/>
+   <addaction name="action_add"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="action_add_line">
@@ -60,6 +64,26 @@
   <action name="action_draw_arrows">
    <property name="text">
     <string>箭头</string>
+   </property>
+  </action>
+  <action name="vertical_action">
+   <property name="text">
+    <string>水平分割</string>
+   </property>
+  </action>
+  <action name="horizontal_action">
+   <property name="text">
+    <string>垂直分割</string>
+   </property>
+  </action>
+  <action name="delete_action">
+   <property name="text">
+    <string>删除分割</string>
+   </property>
+  </action>
+  <action name="action_add">
+   <property name="text">
+    <string>添加Label</string>
    </property>
   </action>
  </widget>
@@ -130,11 +154,79 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>horizontal_action</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_horizontal_splitter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vertical_action</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_vertical_splitter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_add</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_add_label()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delete_action</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slot_delete_splitter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>274</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>slot_add_line()</slot>
   <slot>slot_delete_line()</slot>
   <slot>slot_draw_line()</slot>
   <slot>slot_draw_arrows()</slot>
+  <slot>slot_vertical_splitter()</slot>
+  <slot>slot_horizontal_splitter()</slot>
+  <slot>slot_delete_splitter()</slot>
+  <slot>slot_add_label()</slot>
  </slots>
 </ui>

@@ -34,6 +34,10 @@ public slots:
 	void slot_delete_line();
 	void slot_draw_line();
 	void slot_draw_arrows();
+	void slot_vertical_splitter();
+	void slot_horizontal_splitter();
+	void slot_delete_splitter();
+	void slot_add_label();
 
 private:
 

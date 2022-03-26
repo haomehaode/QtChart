@@ -67,7 +67,7 @@ void RadialPlot::delete_pie(const QString& name)
 
 void RadialPlot::init_chart()
 {
-	m_chart->legend()->setVisible(true);
+	//m_chart->legend()->setVisible(true);
 	m_chart->legend()->setAlignment(Qt::AlignRight);
 }
 

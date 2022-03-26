@@ -51,7 +51,7 @@ void HistogramPlot::delete_histogram(const QString& name)
 
 void HistogramPlot::init_chart()
 {
-	m_chart->legend()->hide();
+	//m_chart->legend()->hide();
 	m_chart->addSeries(m_series);
 }
 

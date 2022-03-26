@@ -150,7 +150,7 @@ void StockPlot::delete_stock(const QString& name)
 
 void StockPlot::init_chart()
 {
-	m_chart->legend()->hide();
+	//m_chart->legend()->hide();
 }
 
 void StockPlot::init_axis()

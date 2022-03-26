@@ -79,7 +79,7 @@ void RadarPlot::set_radar_type(RadarType type)
 
 void RadarPlot::init_chart()
 {
-	m_chart->legend()->setVisible(true);
+	//m_chart->legend()->setVisible(true);
 	m_chart->legend()->setAlignment(Qt::AlignRight);
 	item = new RadarItem();
 	item->set_chart(m_chart);

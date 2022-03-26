@@ -50,7 +50,7 @@ void IntervalPlot::add_interval(BoxData& data, int index, double& y_min, double&
 
 void IntervalPlot::init_chart()
 {
-	m_chart->legend()->hide();
+	//m_chart->legend()->hide();
 	m_chart->addSeries(m_series);
 }
 

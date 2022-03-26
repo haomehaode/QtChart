@@ -67,10 +67,12 @@ void ParetoPlot::init_axis()
 	m_scatter->attachAxis(m_axisX);
 
 	m_axisY_1 = new QValueAxis();
+	m_axisY_1->setTitleText("计数");
 	m_chart->addAxis(m_axisY_1, Qt::AlignLeft);
 	m_bar->attachAxis(m_axisY_1);
 
 	m_axisY_2 = new QValueAxis();
+	m_axisY_2->setTitleText("累积频率");
 	m_axisY_2->setTickCount(12);
 	m_axisY_2->setRange(0, 110);
 	m_axisY_2->setLabelFormat("%.1f%");

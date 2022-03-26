@@ -50,6 +50,9 @@ protected:
 	virtual void init_series() = 0;
 
 protected:
+	virtual void resizeEvent(QResizeEvent* event) override;
+
+protected:
 	/** Õº±Ì */
 	QChart* m_chart = nullptr;
 	/**  ”Õº */
