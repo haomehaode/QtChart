@@ -2,7 +2,7 @@ Chart
 
 基于QChart的部分封装二维数据可视化。
 
-![image](https://user-images.githubusercontent.com/32051731/159427576-a55be7cc-66f2-43cf-abb6-38cbc54e95e2.png)
+![image](https://user-images.githubusercontent.com/32051731/160144734-317114c3-e3fc-4db2-87f6-e25e63471989.png)
 
 曲线   
  
@@ -63,6 +63,11 @@ QQ图
 雷达图
 
 ![image](https://user-images.githubusercontent.com/32051731/160069776-01773325-6b68-45a2-877d-0da19467ed15.png)
+
+直方图
+
+![image](https://user-images.githubusercontent.com/32051731/160144223-2ae6a8c2-6285-402a-a264-f4befccd2e59.png)
+
 
 
 
