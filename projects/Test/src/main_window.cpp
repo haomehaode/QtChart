@@ -136,8 +136,15 @@ void MainWindow::init_chart()
 	qq->add_data(qqlist, "1");
 
 	pareto = new ParetoPlot();
-	QList<QPointF> paretolist{ QPointF(1,35),QPointF(2,5) ,QPointF(3,21) ,QPointF(4,9) ,QPointF(5,10) ,QPointF(6,17),QPointF(7,3) };
-	pareto->set_data(paretolist, "1");
+	QList<ParetoData> paretolist{ 
+		ParetoData("1月",35),
+		ParetoData("2月",5) ,
+		ParetoData("3月",21) ,
+		ParetoData("4月",9) ,
+		ParetoData("5月",10) ,
+		ParetoData("6月",17),
+		ParetoData("7月",3) };
+	pareto->set_data(paretolist);
 
 	stock = new StockPlot();
 	QList<CandlestickData> data_list
@@ -359,7 +366,8 @@ ThirdDData(3.1885, 8.0106, 9.62)
 	radar->add_radar(radar2,"2");
 
 	histogram = new HistogramPlot();
-	QList<double> histogram_list{ 1,2,3,5,7,9,10,3,1,3,5,7,9,1,11,1,3,3,23,4,5,6,7,8,9,10 };
+	QList<double> histogram_list{ 1,2,3,5,7,8,9,10,3,1,3,5,7,9,1,11,1,3,3,23,4,5,6,7,8,9,10 };
+	//QList<double> histogram_list{ 0.11,0.22,0.33,0.555,0.77 };
 	histogram->add_histogram(histogram_list,"1");
 
 	QWidget* w = new QWidget(this);

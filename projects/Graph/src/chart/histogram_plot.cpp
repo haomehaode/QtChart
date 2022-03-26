@@ -37,6 +37,7 @@ void HistogramPlot::add_histogram(QList<double>& value_list, const QString& name
 	m_chartview->add_item(item);
 
 	m_axisX->setTickCount(list.size()+1);
+	m_max_x = m_min_x + list.size() * m_interval;
 	m_axisX->setRange(m_min_x, m_max_x);
 	m_axisY->setTickCount(m_count+2);
 	m_axisY->setRange(0, m_count+1);
@@ -75,17 +76,16 @@ QList<QVector<double>> HistogramPlot::prepare_data(QList<double>& list)
 	for (auto& item : list)
 	{
 		if (item < m_min_x)
-			m_min_x = floor(item);
+			m_min_x = item;
 		if (item > m_max_x)
-			m_max_x = ceil(item);
+			m_max_x = item;
 	}
 
-	while ((int)(m_max_x-m_min_x)%m_interval!=0)
-		m_max_x++;
-	m_max_x = m_max_x + m_interval;
+	if ((floor((m_max_x - m_min_x) / m_interval)) * m_interval + m_min_x >=m_max_x)
+		m_max_x = m_max_x + m_interval;
 
 	QList<QVector<double>> histogram_list;
-	for (int i = m_min_x; i < m_max_x; i = i + m_interval)
+	for (double i = m_min_x; i < m_max_x; i = i + m_interval)
 	{
 		QVector<double> vect;
 		vect.resize(3);
@@ -97,11 +97,11 @@ QList<QVector<double>> HistogramPlot::prepare_data(QList<double>& list)
 
 	for (int i = 0; i < list.size(); i++)
 	{
-		int index = (list[i] - m_min_x) / m_interval;
-		if ((int)(list[i]-m_min_x)%m_interval==0)
-			histogram_list[index][2]++;
-		else
+		int index = floor((list[i] - m_min_x) / m_interval);
+		if (index*m_interval+m_min_x<list[i])
 			histogram_list[index--][2]++;
+		else
+			histogram_list[index][2]++;
 	}
 	return histogram_list;
 }

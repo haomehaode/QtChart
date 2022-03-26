@@ -60,6 +60,19 @@ struct PieData
 	double m_value;
 };
 
+/** 帕累托图数据 */
+struct ParetoData
+{
+	ParetoData(QString name, double value)
+	{
+		m_name = name;
+		m_value = value;
+	}
+	QString m_name;
+	double m_value;
+	double m_percent;
+};
+
 /** 3d数据 */
 struct ThirdDData
 {

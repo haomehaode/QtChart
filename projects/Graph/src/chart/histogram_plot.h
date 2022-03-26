@@ -69,7 +69,7 @@ private:
 	/** 参考点 */
 	QScatterSeries* m_series = nullptr;
 	/** 间距 */
-	int m_interval = 2;
+	double m_interval = 2;
 	/** 总数 */
 	int m_count = 0;
 };

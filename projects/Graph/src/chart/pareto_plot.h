@@ -3,6 +3,7 @@
 
 #include "plot.h"
 #include "graph_global.h"
+#include "data.h"
 #include <QLineSeries>
 #include <QValueAxis>
 #include <QBarCategoryAxis>
@@ -22,7 +23,7 @@ public:
 
 public:
 
-	void set_data(QList<QPointF>& vallist, const QString& name);
+	void set_data(QList<ParetoData>& value_list);
 
 	void clear_data();
 
@@ -34,7 +35,7 @@ public:
 
 private:
 	/** Êý¾Ý¼ÆËã */
-	void prepare_data(QList<QPointF>& poslist);
+	QList<ParetoData>& prepare_data(QList<ParetoData>& value_list);
 
 private:
 

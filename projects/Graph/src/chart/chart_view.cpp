@@ -175,10 +175,10 @@ void ChartView::mouseReleaseEvent(QMouseEvent* event)
 	{ 
 		//鼠标左键释放，获取矩形框的endPoint,进行缩放
 		m_end_point = event->pos();
-		QRectF  rectF;
-		rectF.setTopLeft(this->m_begin_point);
-		rectF.setBottomRight(this->m_end_point);
-		m_chart->zoomIn(rectF);
+		//QRectF  rectF;
+		//rectF.setTopLeft(this->m_begin_point);
+		//rectF.setBottomRight(this->m_end_point);
+		//m_chart->zoomIn(rectF);
 	}
 	else if (event->button() == Qt::RightButton)
 	{

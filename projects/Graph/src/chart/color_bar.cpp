@@ -105,25 +105,55 @@ QRectF ColorBar::boundingRect() const
 void ColorBar::on_paint(QPainter* painter)
 {
 	QRectF rect = boundingRect();
-	//painter->save();
-	//painter->setPen(Qt::NoPen);
-	//painter->setBrush(Qt::white);
-	//painter->drawRect(rect);
-	//painter->restore();
-
-	QRectF bar_rect = rect;
-	bar_rect.setWidth(25);
-	draw_color_bar(painter, bar_rect);
-
-	QRectF title_rect = rect;
-	title_rect.setWidth(50);
-	title_rect.setTopLeft(QPointF(rect.topLeft().x() + 30, rect.topLeft().y()));
-	draw_color_title(painter, title_rect);
+	switch (m_area)
+	{
+	case Top: 
+		{
+			QRectF bar_rect = rect;
+			bar_rect.setHeight(-25);
+			draw_color_bar(painter, bar_rect);
+			QRectF title_rect = rect;
+			title_rect.setTopLeft(QPointF(rect.topLeft().x(), rect.topLeft().y() - 30));
+			draw_color_title(painter, title_rect);
+		}
+		break;
+	case Bottom:
+		{
+			QRectF bar_rect = rect;
+			bar_rect.setHeight(25);
+			draw_color_bar(painter, bar_rect);
+			QRectF title_rect = rect;
+			title_rect.setTopLeft(QPointF(rect.topLeft().x(), rect.topLeft().y() + 30));
+			draw_color_title(painter, title_rect);
+		}
+		break;
+	case Left:
+		{
+			QRectF bar_rect = rect;
+			bar_rect.setBottomRight(QPointF(rect.topLeft().x() - 25, rect.bottomRight().y()));
+			draw_color_bar(painter, bar_rect);
+			QRectF title_rect = rect;
+			title_rect.setTopLeft(QPointF(rect.topLeft().x() - 30, rect.topLeft().y()));
+			draw_color_title(painter, title_rect);
+		}
+		break;
+	case Right: 
+		{
+			QRectF bar_rect = rect;
+			bar_rect.setWidth(25);
+			draw_color_bar(painter, bar_rect);
+			QRectF title_rect = rect;
+			title_rect.setTopLeft(QPointF(rect.topLeft().x() + 30, rect.topLeft().y()));
+			draw_color_title(painter, title_rect);
+		}
+		break;
+	default:
+		break;
+	}
 }
 
 void ColorBar::draw_color_bar(QPainter* painter,QRectF rect)
 {
-
 	QVector<QColor> colors;
 	switch (m_type)
 	{
@@ -188,8 +218,35 @@ void ColorBar::draw_color_title(QPainter* painter, QRectF rect)
 	for (int i = 0; i < 6; i++) {
 		QString str = QString().sprintf("%.2f", m_min + i * (m_max - m_min) / 5);
 		QFontMetrics fm = painter->fontMetrics();
-		QPointF pos(rect.topLeft().x(), rect.bottomLeft().y() - (rect.height() / 5) * i + fm.ascent() / 2);
-		painter->drawText(pos, str);
+		switch (m_area)
+		{
+		case Top:
+			{
+				QPointF pos(rect.topLeft().x() + (rect.width() / 5) * i - fm.width(str) / 2, rect.topLeft().y());
+				painter->drawText(pos, str); 
+			}
+			break;
+		case Bottom:
+			{
+				QPointF pos(rect.topLeft().x() + (rect.width() / 5) * i - fm.width(str) / 2, rect.topLeft().y()+fm.ascent());
+				painter->drawText(pos, str);
+			}
+			break;
+		case Left:
+			{
+				QPointF pos(rect.topLeft().x() - fm.width(str), rect.bottomLeft().y() - (rect.height() / 5) * i + fm.ascent() / 2);
+				painter->drawText(pos, str);
+			}
+			break;
+		case Right:
+			{
+				QPointF pos(rect.topLeft().x(), rect.bottomLeft().y() - (rect.height() / 5) * i + fm.ascent() / 2);
+				painter->drawText(pos, str);
+			}
+			break;
+		default:
+			break;
+		}
 	}
 }
 

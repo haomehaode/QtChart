@@ -1,6 +1,8 @@
 #pragma execution_character_set("utf-8")
 
 #include "pareto_plot.h"
+#include <numeric>
+using namespace std;
 
 ParetoPlot::ParetoPlot(QWidget *parent)
 	: Plot(parent)
@@ -15,18 +17,20 @@ ParetoPlot::~ParetoPlot()
 
 }
 
-void ParetoPlot::set_data(QList<QPointF>& list, const QString& name)
+void ParetoPlot::set_data(QList<ParetoData>& value_list)
 {
+	QList<ParetoData> data = prepare_data(value_list);
+
 	QVector<QPointF> line_center_poslist;
 	QVector<QPointF> scatter_poslist;
 
-	for (int i=0;i<list.size();i++)
+	for (int i = 0; i < data.size(); i++)
 	{
-		m_axisy_list.append(QString::number(list[i].x()));
-		m_set->append(list[i].y());
+		m_axisy_list.append(data[i].m_name);
+		m_set->append(data[i].m_value);
 
-		line_center_poslist.append(QPointF(i, list[i].y()));
-		scatter_poslist.append(QPointF(i, list[i].y()));
+		line_center_poslist.append(QPointF(i, data[i].m_percent));
+		scatter_poslist.append(QPointF(i, data[i].m_percent));
 	}
 
 	m_line->replace(line_center_poslist);
@@ -61,10 +65,8 @@ void ParetoPlot::init_axis()
 	m_line->attachAxis(m_axisX);
 	m_bar->attachAxis(m_axisX);
 	m_scatter->attachAxis(m_axisX);
-	//m_axisX->setRange(m_axisy_list.first(), m_axisy_list.last());
 
 	m_axisY_1 = new QValueAxis();
-	//m_axisY_1->setRange(1, 100);
 	m_chart->addAxis(m_axisY_1, Qt::AlignLeft);
 	m_bar->attachAxis(m_axisY_1);
 
@@ -96,7 +98,25 @@ void ParetoPlot::init_series()
 	m_scatter->setPointLabelsClipping(false);
 }
 
-void ParetoPlot::prepare_data(QList<QPointF>& poslist)
+QList<ParetoData>& ParetoPlot::prepare_data(QList<ParetoData>& value_list)
 {
-	//qSort(poslist);
+	qSort(value_list.begin(), value_list.end(), 
+		[](const ParetoData& data1,const ParetoData& data2) 
+		{
+			return data1.m_value > data2.m_value;
+		});
+	double sum = accumulate(value_list.begin(), value_list.end(), 0, 
+		[](double a, ParetoData b) 
+		{
+			return a + b.m_value;
+		});
+	double result = 0;
+	for (auto& item :value_list)
+	{
+		result += item.m_value;
+		item.m_percent = result / sum * 100;
+	}
+	return value_list;
 }
+
+
