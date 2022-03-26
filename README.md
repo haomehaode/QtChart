@@ -2,7 +2,7 @@ Chart
 
 基于QChart的部分封装二维数据可视化。
 
-![image](https://user-images.githubusercontent.com/32051731/160144734-317114c3-e3fc-4db2-87f6-e25e63471989.png)
+![image](https://user-images.githubusercontent.com/32051731/160242419-0d6d590c-2cf1-4814-88cd-b2fb8903dded.png)
 
 曲线   
  
@@ -20,9 +20,9 @@ QQ图
 
 ![image](https://user-images.githubusercontent.com/32051731/159617300-9347286f-7478-4764-bb16-764287bfbe0c.png)
 
-帕累托图(存在问题，后续完善)
+帕累托图
 
-![image](https://user-images.githubusercontent.com/32051731/159617156-050a9019-5490-48da-b7e2-b24ade0851c0.png)
+![image](https://user-images.githubusercontent.com/32051731/160242340-21c25f1b-45fa-4d35-8692-0230033b5794.png)
 
 饼图
 
@@ -66,7 +66,8 @@ QQ图
 
 直方图
 
-![image](https://user-images.githubusercontent.com/32051731/160144223-2ae6a8c2-6285-402a-a264-f4befccd2e59.png)
+![image](https://user-images.githubusercontent.com/32051731/160242387-c2b09bbf-e2ae-41c1-b8e4-3650a705e1d0.png)
+
 
 
 
