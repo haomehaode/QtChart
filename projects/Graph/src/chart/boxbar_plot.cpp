@@ -2,6 +2,9 @@
 
 #include "boxbar_plot.h"
 #include "util.h"
+#include <QPainter>
+#include "chart_view.h"
+#include "plot.h"
 
 BoxBarPlot::BoxBarPlot(QWidget* parent)
 	: Plot(parent)
@@ -34,36 +37,44 @@ void BoxBarPlot::set_type(BoxBarType type)
 
 void BoxBarPlot::set_data(QList<BoxData>& list)
 {
-	for (auto& item : list)
+	for (int i = 0; i < list.size(); i++)
 	{
-		if (Util::max(item.m_value_list) > m_max_y)
-			m_max_y = Util::max(item.m_value_list);
-		add_boxbar(item);
+		if (Util::max(list[i].m_value_list) > m_max_y)
+			m_max_y = Util::max(list[i].m_value_list);
+		add_boxbar(list[i],list.size(),i);
 	}
 
 	m_axisX->setCategories(m_axisx_list);
 	m_axisY->setRange(0, m_max_y * 1.1);
 }
 
-void BoxBarPlot::add_boxbar(BoxData& data)
+void BoxBarPlot::add_boxbar(BoxData& data, int size, int index)
 {
 	if (m_name2series.contains(data.m_name))
 		return;
 
 	double mean, sum, min, max;
-	QBoxSet* box = new QBoxSet(data.m_name);
+	QBarSet* box = new QBarSet(data.m_name);
 	Util::cal_list(data.m_value_list, mean, sum, max, min);
 	box->setProperty("mean", mean);
 	box->setProperty("sum", sum);
 	box->setProperty("min", max);
 	box->setProperty("max", min);
-	box->setValue(QBoxSet::LowerExtreme, 0);
-	box->setValue(QBoxSet::UpperExtreme, max);
-	box->setValue(QBoxSet::Median, 0);
-	box->setValue(QBoxSet::LowerQuartile, mean);
-	box->setValue(QBoxSet::UpperQuartile, 0);
+	box->setProperty("index", index);
+
+	for (int i = 0; i < size; i++)
+		box->append(0);	
+	box->replace(index, mean);
+
 	m_axisx_list.append(data.m_name);
 	m_series->append(box);
+
+
+	BoxBarItem* item = new BoxBarItem();
+	item->set_chart(m_chart);
+	item->set_data(mean, sum, min, max, index);
+	m_chartview->add_item(item);
+	m_name2item[data.m_name] = item;
 
 	m_name2series[data.m_name] = box;
 }
@@ -74,6 +85,9 @@ void BoxBarPlot::delete_boxbar(const QString& name)
 		return;
 	m_series->remove(m_name2series[name]);
 	m_name2series.remove(name);
+
+	m_chartview->delete_item(m_name2item[name]);
+	m_name2item.remove(name);
 }
 
 void BoxBarPlot::init_chart()
@@ -94,5 +108,56 @@ void BoxBarPlot::init_axis()
 
 void BoxBarPlot::init_series()
 {
-	m_series = new QBoxPlotSeries();
+	m_series = new QStackedBarSeries();
+}
+
+BoxBarItem::BoxBarItem()
+{
+	connect(this, &BoxBarItem::signal_prepare_path, this, &BoxBarItem::slot_prepare_path);
+}
+
+void BoxBarItem::set_chart(QChart* chart)
+{
+	m_chart = chart;
+}
+
+void BoxBarItem::set_data(double mean, double sum, double min, double max, int index)
+{
+	m_min = QPointF(index, min);
+	m_max = QPointF(index, max);
+	m_mean = QPointF(index, mean);
+	m_sum = QPointF(index, sum);
+}
+
+void BoxBarItem::slot_prepare_path()
+{
+	QLineF line(m_chart->mapToPosition(QPointF(0, 0)), m_chart->mapToPosition(QPointF(1, 0)));
+	double width = line.length();
+	QPointF top = m_chart->mapToPosition(m_max);
+	QPointF buttom = m_chart->mapToPosition(m_min);
+	QPointF center = m_chart->mapToPosition(m_mean);
+	QPointF tl = top - QPointF(width * 0.1, 0);
+	QPointF tr = top + QPointF(width * 0.1, 0);
+	QPointF bl = buttom - QPointF(width * 0.1, 0);
+	QPointF br = buttom + QPointF(width * 0.1, 0);
+
+	QPainterPath path;
+	path.moveTo(top);
+	path.lineTo(center);
+	path.moveTo(tl);
+	path.lineTo(tr);
+
+	m_shape = path;
+}
+
+QRectF BoxBarItem::boundingRect() const
+{
+	emit signal_prepare_path();
+	return m_chart->plotArea().intersected(m_shape.boundingRect());
+}
+
+void BoxBarItem::on_paint(QPainter* painter)
+{
+	painter->setClipRect(boundingRect());
+	painter->drawPath(m_shape);
 }

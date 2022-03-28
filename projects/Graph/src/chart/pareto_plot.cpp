@@ -40,7 +40,7 @@ void ParetoPlot::set_data(QList<ParetoData>& value_list)
 	m_axisX->append(m_axisy_list);
 	m_axisX->setRange(m_axisy_list.first(), m_axisy_list.last());
 
-	connect(m_scatter, &QScatterSeries::hovered, this, &Plot::slot_tool_tip);
+	//connect(m_scatter, &QScatterSeries::hovered, this, &Plot::slot_tool_tip);
 }
 
 void ParetoPlot::clear_data()

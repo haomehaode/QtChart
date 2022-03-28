@@ -1,6 +1,7 @@
 #pragma execution_character_set("utf-8")
 
 #include "radial_plot.h"
+#include "QPieSeries"
 
 RadialPlot::RadialPlot(QWidget* parent)
 	: Plot(parent)
@@ -22,14 +23,19 @@ void RadialPlot::slot_tool_tip(QPieSlice* slice, bool state)
 
 void RadialPlot::update_location()
 {
+	const QStringList colorNames = QColor::colorNames();
 	double sum = 360 / m_pie_series.size();
-
 	double start = 0;
-	for (auto& item : m_pie_series) 
+	for (int i=0;i< m_pie_series.size();i++)
 	{
-		QPieSeries* series = item.m_pie;
+		QPieSeries* series = m_pie_series[i].m_pie;
+
+		QList<QPieSlice*> slices = series->slices();
+		for (QPieSlice* slice : slices)
+			slice->setColor(QColor(colorNames[(i+10)%148]));
+
 		series->setHoleSize(m_radial_min - 0.0001);
-		double length = m_radial_min + m_radial_length * item.m_value / m_max_x;
+		double length = m_radial_min + m_radial_length * m_pie_series[i].m_value / m_max_x;
 		series->setPieSize(length);
 		series->setPieStartAngle(start);
 		start += sum;
