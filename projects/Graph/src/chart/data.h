@@ -1,26 +1,26 @@
-#ifndef DATA_H
+ï»¿#ifndef DATA_H
 #define DATA_H
 
-/** ¸ÅÂÊ½á¹¹ */
+/** æ¦‚ç‡ç»“æ„ */
 struct Probability
 {
-	/** ·ÖÎ»Êı */
+	/** åˆ†ä½æ•° */
 	int index;
-	/** ÀíÂÛÖµ */
+	/** ç†è®ºå€¼ */
 	double theory;
-	/** ÀíÂÛCDF */
+	/** ç†è®ºCDF */
 	double theory_cdf;
-	/** ÀíÂÛZÖµ */
+	/** ç†è®ºZå€¼ */
 	double theory_z;
-	/** Êµ¼ÊÖµ */
+	/** å®é™…å€¼ */
 	double reality;
-	/** Êµ¼ÊCDF */
+	/** å®é™…CDF */
 	double reality_cdf;
-	/** Êµ¼ÊZÖµ */
+	/** å®é™…Zå€¼ */
 	double reality_z;
 };
 
-/** ÆÀ·Ö·½·¨ */
+/** è¯„åˆ†æ–¹æ³• */
 enum ScoreType
 {
 	Blom,
@@ -30,7 +30,7 @@ enum ScoreType
 	KaplanMeier
 };
 
-/** ¹ÉÆ±Í¼Êı¾İ */
+/** è‚¡ç¥¨å›¾æ•°æ® */
 struct CandlestickData
 {
 	CandlestickData(double timestamp, double open, double high, double low, double close)
@@ -48,7 +48,7 @@ struct CandlestickData
 	double m_close;
 };
 
-/** Öù×´Í¼Êı¾İ */
+/** æŸ±çŠ¶å›¾æ•°æ® */
 struct PieData
 {
 	PieData(QString name, double value)
@@ -60,7 +60,7 @@ struct PieData
 	double m_value;
 };
 
-/** ÅÁÀÛÍĞÍ¼Êı¾İ */
+/** å¸•ç´¯æ‰˜å›¾æ•°æ® */
 struct ParetoData
 {
 	ParetoData(QString name, double value)
@@ -73,7 +73,7 @@ struct ParetoData
 	double m_percent;
 };
 
-/** 3dÊı¾İ */
+/** 3dæ•°æ® */
 struct ThirdDData
 {
 	ThirdDData(double x, double y,double z)
@@ -87,14 +87,14 @@ struct ThirdDData
 	double m_z;
 };
 
-/** ÏäĞÍÍ¼Êı¾İ */
+/** ç®±å‹å›¾æ•°æ® */
 struct BoxData
 {
 	QString m_name;
 	QList<double> m_value_list;
 };
 
-/** ÌõĞÎÍ¼ */
+/** æ¡å½¢å›¾ */
 enum BoxBarType
 {
 	MEAN,
@@ -103,7 +103,7 @@ enum BoxBarType
 	MIN
 };
 
-/** ÃÜ¶Èµã */
+/** å¯†åº¦ç‚¹ */
 struct DensityPoint
 {
 	DensityPoint(double a, double b)

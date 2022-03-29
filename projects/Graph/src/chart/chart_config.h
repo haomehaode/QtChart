@@ -1,4 +1,4 @@
-#ifndef CHART_CONFIG_H
+﻿#ifndef CHART_CONFIG_H
 #define CHART_CONFIG_H
 
 #include <QDialog>

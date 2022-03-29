@@ -1,4 +1,4 @@
-#ifndef AXIS_CONFIG_H
+﻿#ifndef AXIS_CONFIG_H
 #define AXIS_CONFIG_H
 
 #include <QDialog>

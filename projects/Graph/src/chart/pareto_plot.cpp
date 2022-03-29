@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "pareto_plot.h"
 #include <numeric>
@@ -67,16 +67,16 @@ void ParetoPlot::init_axis()
 	m_scatter->attachAxis(m_axisX);
 
 	m_axisY_1 = new QValueAxis();
-	m_axisY_1->setTitleText("¼ÆÊý");
+	m_axisY_1->setTitleText("è®¡æ•°");
 	m_chart->addAxis(m_axisY_1, Qt::AlignLeft);
 	m_bar->attachAxis(m_axisY_1);
 
 	m_axisY_2 = new QValueAxis();
-	m_axisY_2->setTitleText("ÀÛ»ýÆµÂÊ");
+	m_axisY_2->setTitleText("ç´¯ç§¯é¢‘çŽ‡");
 	m_axisY_2->setTickCount(12);
 	m_axisY_2->setRange(0, 110);
 	m_axisY_2->setLabelFormat("%.1f%");
-	m_axisY_2->setGridLineVisible(false);   //Òþ²Ø±³¾°Íø¸ñYÖá¿òÏß
+	m_axisY_2->setGridLineVisible(false);   //éšè—èƒŒæ™¯ç½‘æ ¼Yè½´æ¡†çº¿
 	m_chart->addAxis(m_axisY_2, Qt::AlignRight);
 	m_line->attachAxis(m_axisY_2);
 	m_scatter->attachAxis(m_axisY_2);

@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "pie_plot.h"
 
@@ -62,7 +62,7 @@ void PiePlot::init_series()
 
 void PiePlot::update_label()
 {
-	// ÉèÖÃ¿é±êÇ©
+	// è®¾ç½®å—æ ‡ç­¾
 	for (int sNum = 0; sNum < m_series->slices().count(); sNum++)
 	{
 		QPieSlice* slice = m_series->slices().at(sNum);

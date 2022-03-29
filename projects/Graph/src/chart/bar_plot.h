@@ -1,4 +1,4 @@
-#ifndef BAR_PLOT_H
+ï»¿#ifndef BAR_PLOT_H
 #define BAR_PLOT_H
 
 #include "plot.h"
@@ -37,21 +37,21 @@ public:
 
 
 private:
-	/** Êı¾İ¼ÆËã */
+	/** æ•°æ®è®¡ç®— */
 	void prepare_data(QList<double>& value_list);
 
 private:
-	/** Ãû³ÆºÍÏµÁĞÓ³Éä */
+	/** åç§°å’Œç³»åˆ—æ˜ å°„ */
 	QMap<QString, QBarSet*> m_name2series;
 
 	QBarSeries* m_series = nullptr;
-	/** X Öá¿Ì¶È¼¯ºÏ */
+	/** X è½´åˆ»åº¦é›†åˆ */
 	QStringList m_axisx_list;
-	/** X Öá */
+	/** X è½´ */
 	QBarCategoryAxis* m_axisX =nullptr;
-	/** Y Öá */
+	/** Y è½´ */
 	QValueAxis* m_axisY = nullptr;
-	/** ¼ÇÂ¼×ø±êÖá·¶Î§ */
+	/** è®°å½•åæ ‡è½´èŒƒå›´ */
 	QStack<double> m_range[2];
 
 };

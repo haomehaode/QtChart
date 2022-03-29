@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "plot.h"
 #include "tool_tip.h"
@@ -74,7 +74,7 @@ void Plot::draw_arrows()
 
 void Plot::resizeEvent(QResizeEvent* event)
 {
-	//±éÀúÃ¿Ò»¸öÍ¼Àı
+	//éå†æ¯ä¸€ä¸ªå›¾ä¾‹
 	//const auto markers = m_chart->legend()->markers();
 	//for (QLegendMarker* marker : markers)
 	//{

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SizeGripItem - A size grip QGraphicsItem for interactive resizing.
  *
  * Copyright (c) 2011 Cesar L. B. Silveira

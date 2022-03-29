@@ -1,4 +1,4 @@
-#ifndef SCATTER_PLOT_H 
+ï»¿#ifndef SCATTER_PLOT_H 
 #define SCATTER_PLOT_H
 
 #include "plot.h"
@@ -29,17 +29,17 @@ public:
 	virtual void init_series() override;
 
 private:
-	/** Êı¾İ¼ÆËã */
+	/** æ•°æ®è®¡ç®— */
 	void prepare_data(QList<QPointF>& poslist);
 
 private:
-	/** Ãû³ÆºÍÏµÁĞÓ³Éä */
+	/** åç§°å’Œç³»åˆ—æ˜ å°„ */
 	QMap<QString, QScatterSeries*> m_name2series;
-	/** X Öá */
+	/** X è½´ */
 	QValueAxis* m_axisX = nullptr;
-	/** Y Öá */
+	/** Y è½´ */
 	QValueAxis* m_axisY = nullptr;
-	/** ¼ÇÂ¼×ø±êÖá·¶Î§ */
+	/** è®°å½•åæ ‡è½´èŒƒå›´ */
 	QStack<double> m_range[4];
 };
 

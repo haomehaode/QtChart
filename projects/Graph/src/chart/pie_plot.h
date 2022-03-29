@@ -1,4 +1,4 @@
-#ifndef PIE_PLOT_H
+ï»¿#ifndef PIE_PLOT_H
 #define PIE_PLOT_H
 
 #include "graph_global.h"
@@ -19,7 +19,7 @@ public:
 	~PiePlot();
 
 public slots:
-	/** Êó±êÌáÊ¾ */
+	/** é¼ æ ‡æç¤º */
 	virtual void slot_tool_tip(QPieSlice* slice, bool state);
 
 public:
@@ -41,7 +41,7 @@ private:
 	void update_label();
 
 private:
-	/** Ãû³ÆºÍÏµÁĞÓ³Éä */
+	/** åç§°å’Œç³»åˆ—æ˜ å°„ */
 	QMap<QString, QPieSlice*> m_name2series;
 
 	QPieSeries* m_series = nullptr;

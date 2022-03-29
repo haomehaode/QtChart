@@ -1,4 +1,4 @@
-#ifndef INTERVAL_PLOT_H
+ï»¿#ifndef INTERVAL_PLOT_H
 #define INTERVAL_PLOT_H
 
 #include "plot.h"
@@ -11,7 +11,7 @@
 #include <QStack>
 
 //////////////////////////////////////////////////////////////////////////////
-/// ¼ä¸ôÍ¼
+/// é—´éš”å›¾
 class IntervalItem :public GraphicsItem 
 {
 	Q_OBJECT
@@ -67,17 +67,17 @@ public:
 	virtual void init_series() override;
 
 private:
-	/** Ãû³ÆºÍÏµÁĞÓ³Éä */
+	/** åç§°å’Œç³»åˆ—æ˜ å°„ */
 	QMap<QString, GraphicsItem*> m_name2item;
-	/** X Öá */
+	/** X è½´ */
 	QBarCategoryAxis* m_axisX = nullptr;
-	/** X Öá¿Ì¶È */
+	/** X è½´åˆ»åº¦ */
 	QStringList m_axisx_list;
-	/** Y Öá */
+	/** Y è½´ */
 	QValueAxis* m_axisY = nullptr;
-	/** ¼ÇÂ¼×ø±êÖá·¶Î§ */
+	/** è®°å½•åæ ‡è½´èŒƒå›´ */
 	QStack<double> m_range[4];
-	/** ²Î¿¼µã */
+	/** å‚è€ƒç‚¹ */
 	QScatterSeries* m_series = nullptr;
 };
 

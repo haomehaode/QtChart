@@ -1,4 +1,4 @@
-#ifndef QQ_PLOT_H
+ï»¿#ifndef QQ_PLOT_H
 #define QQ_PLOT_H
 
 #include "plot.h"
@@ -34,19 +34,19 @@ public:
 	virtual void init_series() override;
 
 private:
-	/** Êı¾İ¼ÆËã */
+	/** æ•°æ®è®¡ç®— */
 	void prepare_data(QList<double>& list);
-	/** ÀíÂÛCDF */
+	/** ç†è®ºCDF */
 	double calculate_cdf(int index, int n);
 
 private:
-	/** Æ½¾ùÖµ */
+	/** å¹³å‡å€¼ */
 	double m_mean;
-	/** ·½²î */
+	/** æ–¹å·® */
 	double m_variance;
-	/** ±ê×¼²î */
+	/** æ ‡å‡†å·® */
 	double m_sigma;
-	/** Ñù±¾Êı */
+	/** æ ·æœ¬æ•° */
 	int m_n;
 
 private:

@@ -1,4 +1,4 @@
-#ifndef GRAPHICS_ITEM_H
+ï»¿#ifndef GRAPHICS_ITEM_H
 #define GRAPHICS_ITEM_H
 
 #include "QGraphicsItem"
@@ -9,32 +9,32 @@ class ChartView;
 class GRAPH_EXPORT GraphicsItem : public QGraphicsObject
 {
 public:
-	/** ¹¹Ôìº¯Êı */
+	/** æ„é€ å‡½æ•° */
 	GraphicsItem();
-	/** ÉèÖÃËùÊôÊÓÍ¼ */
+	/** è®¾ç½®æ‰€å±è§†å›¾ */
 	void set_view(ChartView* view);
-	/** »ñÈ¡ËùÊôÊÓÍ¼ */
+	/** è·å–æ‰€å±è§†å›¾ */
 	ChartView* view();
 	/**
-	* Í¼ÔªÊı¾İ±ä¸üÊ±¿ÉÊÖ¶¯µ÷ÓÃ¸Ã½Ó¿ÚÒÔÓ¦ÓÃĞÂµÄÊı¾İ£¬
-	* Í¼Ôª»æÖÆÇ°»á×Ô¶¯µ÷ÓÃ¸Ã½Ó¿ÚÒÔ±ãÏÔÊ¾ÕıÈ·µÄĞÎ×´¡£
+	* å›¾å…ƒæ•°æ®å˜æ›´æ—¶å¯æ‰‹åŠ¨è°ƒç”¨è¯¥æ¥å£ä»¥åº”ç”¨æ–°çš„æ•°æ®ï¼Œ
+	* å›¾å…ƒç»˜åˆ¶å‰ä¼šè‡ªåŠ¨è°ƒç”¨è¯¥æ¥å£ä»¥ä¾¿æ˜¾ç¤ºæ­£ç¡®çš„å½¢çŠ¶ã€‚
 	*/
 	void apply();
 
 protected:
-	/** »æÍ¼ÇøÓò */
+	/** ç»˜å›¾åŒºåŸŸ */
 	virtual QRectF boundingRect() const override;
-	/** »æÍ¼º¯Êı */
+	/** ç»˜å›¾å‡½æ•° */
 	virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
-	/** ¿ËÂ¡£¬ÓÉ×ÓÀàÊµÏÖ */
+	/** å…‹éš†ï¼Œç”±å­ç±»å®ç° */
 	virtual GraphicsItem* clone() { return nullptr; }
-	/** Êı¾İ¸üĞÂ¼ÆËã°üÎ§ºĞ£¬ÓÉ×ÓÀàÊµÏÖ */
+	/** æ•°æ®æ›´æ–°è®¡ç®—åŒ…å›´ç›’ï¼Œç”±å­ç±»å®ç° */
 	virtual void on_apply() {}
-	/** »æÖÆÍ¼Ïñ£¬ÓÉ×ÓÀàÊµÏÖ */
+	/** ç»˜åˆ¶å›¾åƒï¼Œç”±å­ç±»å®ç° */
 	virtual void on_paint(QPainter* painter) {}
 
 private:
-	/** ËùÊôÊÓÍ¼ */
+	/** æ‰€å±è§†å›¾ */
 	ChartView* m_view = nullptr;
 };
 

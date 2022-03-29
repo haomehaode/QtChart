@@ -1,4 +1,4 @@
-#include "radar_plot.h"
+﻿#include "radar_plot.h"
 #include <QPainter>
 #include "chart_view.h"
 #include "math_define.h"
@@ -105,7 +105,7 @@ void RadarPlot::init_series()
 }
 
 //////////////////////////////////////////////////////////////////////////////
-/// �״�ͼ
+/// 雷达图
 RadarItem::RadarItem()
 {
 

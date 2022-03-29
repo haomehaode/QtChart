@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "histogram_plot.h"
 #include "chart_view.h"
@@ -40,9 +40,9 @@ void HistogramPlot::add_histogram(QList<double>& value_list, const QString& name
 		if (list[i][2] > m_count)
 			m_count = list[i][2];
 		QVector<double> ver;
-		ver.append(list[i][0]); //¿ªÊ¼
-		ver.append(list[i][1]); //½áÊø
-		ver.append(list[i][2]); //×ÜÊý
+		ver.append(list[i][0]); //å¼€å§‹
+		ver.append(list[i][1]); //ç»“æŸ
+		ver.append(list[i][2]); //æ€»æ•°
 
 		HistogramItem* item = new HistogramItem();
 		item->set_chart(m_chart);
@@ -167,7 +167,7 @@ QList<QVector<double>> HistogramPlot::prepare_data(QList<double>& list)
 }
 
 //////////////////////////////////////////////////////////////////////////////
-/// Ö±·½Í¼
+/// ç›´æ–¹å›¾
 HistogramItem::HistogramItem()
 {
 	connect(this, &HistogramItem::signal_prepare_path, this, &HistogramItem::slot_prepare_path);

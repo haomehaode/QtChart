@@ -1,4 +1,4 @@
-#ifndef COLOR_BAR_H
+﻿#ifndef COLOR_BAR_H
 #define COLOR_BAR_H
 
 #include "chart_view.h"

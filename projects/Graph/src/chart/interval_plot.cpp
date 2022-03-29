@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "interval_plot.h"
 #include "chart_view.h"
@@ -71,7 +71,7 @@ void IntervalPlot::init_series()
 }
 
 //////////////////////////////////////////////////////////////////////////////
-/// ¼ä¸ôÍ¼
+/// é—´éš”å›¾
 IntervalItem::IntervalItem()
 {
 	connect(this, &IntervalItem::signal_prepare_path, this, &IntervalItem::slot_prepare_path);

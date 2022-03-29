@@ -1,4 +1,4 @@
-
+﻿
 #include <QBrush>
 #include "SizeGripItem.h"
 #include <QStyleOptionGraphicsItem>

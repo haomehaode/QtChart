@@ -1,4 +1,4 @@
-#ifndef TOOL_TIP_H
+﻿#ifndef TOOL_TIP_H
 #define TOOL_TIP_H
 
 #include "graph_global.h"

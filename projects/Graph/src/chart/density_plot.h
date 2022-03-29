@@ -1,4 +1,4 @@
-#ifndef DENSITY_PLOT_H
+ï»¿#ifndef DENSITY_PLOT_H
 #define DENSITY_PLOT_H
 
 #include "plot.h"
@@ -39,15 +39,15 @@ private:
 
 
 private:
-	/** ÑÕÉ«Ìõ */
+	/** é¢œè‰²æ¡ */
 	ColorBar* m_color_item = nullptr;
-	/** X Öá */
+	/** X è½´ */
 	QValueAxis* m_axisX = nullptr;
-	/** Y Öá */
+	/** Y è½´ */
 	QValueAxis* m_axisY = nullptr;
-	/** ÃÜ¶ÈÖµºÍÉ¢µã */
+	/** å¯†åº¦å€¼å’Œæ•£ç‚¹ */
 	QMap<int, QScatterSeries*> value2series;
-	/** ÃÜ¶È°ë¾¶ */
+	/** å¯†åº¦åŠå¾„ */
 	double radius = 1;
 };
 

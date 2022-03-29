@@ -1,4 +1,4 @@
-#ifndef CHART_VIEW_H
+ï»¿#ifndef CHART_VIEW_H
 #define CHART_VIEW_H
 
 #include "graph_global.h"
@@ -19,25 +19,25 @@ public:
 	ChartView(QChart* chart, QWidget* parent = nullptr);
 
 public:
-	/** ÖØ»æ³¡¾° */
+	/** é‡ç»˜åœºæ™¯ */
 	void redraw();
-	/** \brief ±£´æÍ¼Æ¬*/
+	/** \brief ä¿å­˜å›¾ç‰‡*/
 	bool save_picture(const QString& filename, const QSize& size = QSize(3050, 2050));
-	/** ·µ»ØÊÓÍ¼µÄwidget */
+	/** è¿”å›è§†å›¾çš„widget */
 	QWidget* widget();
-	/** ÖÇÄÜÉèÖÃÊÓÍ¼µÄ¹â±ê */
+	/** æ™ºèƒ½è®¾ç½®è§†å›¾çš„å…‰æ ‡ */
 	void set_cursor_auto();
-	/** ½«ÊÓÍ¼×ø±ê×ª»»µ½³¡¾°×ø±ê */
+	/** å°†è§†å›¾åæ ‡è½¬æ¢åˆ°åœºæ™¯åæ ‡ */
 	QPointF map_to_scene(const QPoint& pos);
-	/** ½«³¡¾°×ø±ê×ª»»µ½ÊÓÍ¼×ø±ê */
+	/** å°†åœºæ™¯åæ ‡è½¬æ¢åˆ°è§†å›¾åæ ‡ */
 	QPoint map_from_scene(const QPointF& pos);
-	/** ½«ÊÓÍ¼×ø±ê×ª»»µ½ÆÁÄ»×ø±ê */
+	/** å°†è§†å›¾åæ ‡è½¬æ¢åˆ°å±å¹•åæ ‡ */
 	QPoint map_to_global(const QPoint& pos);
-	/** Ìí¼ÓÍ¼Ôª */
+	/** æ·»åŠ å›¾å…ƒ */
 	void add_item(GraphicsItem* item);
-	/** É¾³ıÍ¼Ôª */
+	/** åˆ é™¤å›¾å…ƒ */
 	void delete_item(GraphicsItem* item);
-	/** ÕıÔÚ»æÍ¼ */
+	/** æ­£åœ¨ç»˜å›¾ */
 	bool is_previewing();
 
 public slots:
@@ -65,17 +65,17 @@ protected:
 	virtual void mouseDoubleClickEvent(QMouseEvent* event) override;
 
 private:
-	/** Í¼±í */
+	/** å›¾è¡¨ */
 	QChart* m_chart = nullptr;
-	/** ¿òÑ¡¿ªÊ¼µã */
+	/** æ¡†é€‰å¼€å§‹ç‚¹ */
 	QPoint m_begin_point;
-	/** ¿òÑ¡½áÊøµã */
+	/** æ¡†é€‰ç»“æŸç‚¹ */
 	QPoint m_end_point;
-	/** ÍÏ×§µã */
+	/** æ‹–æ‹½ç‚¹ */
 	QPoint m_old_point;
-	/** ÊÇ·ñÍÏ×§ */
+	/** æ˜¯å¦æ‹–æ‹½ */
 	bool m_isTranslate = false;
-	/** ÍÏ×§¼ÇÂ¼*/
+	/** æ‹–æ‹½è®°å½•*/
 	QPointF m_translate_pos;
 };
 

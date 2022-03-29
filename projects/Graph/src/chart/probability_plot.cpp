@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "probability_plot.h"
 #include <QtCore/qmath.h>
@@ -69,7 +69,7 @@ void ProbabilityPlot::init_axis()
 	m_scatter->attachAxis(m_axisX);
 
 	m_axisY = new QCategoryAxis();
-	m_axisY->setTitleText("°Ù·Ö±È");
+	m_axisY->setTitleText("ç™¾åˆ†æ¯”");
 	m_axisY->setLabelsPosition(QCategoryAxis::AxisLabelsPositionOnValue);
 	m_axisY->setMin(-3.09);
 	m_axisY->setMax(3.09);
@@ -99,19 +99,19 @@ void ProbabilityPlot::init_axis()
 void ProbabilityPlot::init_series()
 {
 	m_line_center = new QLineSeries(m_chart);
-	m_line_center->setName("²ÎÕÕÏß");
+	m_line_center->setName("å‚ç…§çº¿");
 	m_line_center->append(QPointF(0, 0));
 
 	m_line_top = new QLineSeries(m_chart);
-	m_line_top->setName("ÉÏÏß°Ù·ÖÎ»Êý");
+	m_line_top->setName("ä¸Šçº¿ç™¾åˆ†ä½æ•°");
 	m_line_top->append(QPointF(0, 0));
 
 	m_line_bottom = new QLineSeries(m_chart);
-	m_line_bottom->setName("ÏÂÏß°Ù·ÖÎ»Êý");
+	m_line_bottom->setName("ä¸‹çº¿ç™¾åˆ†ä½æ•°");
 	m_line_bottom->append(QPointF(0, 0));
 
 	m_scatter = new QScatterSeries();
-	m_scatter->setName("°Ù·ÖÊýÎ»");
+	m_scatter->setName("ç™¾åˆ†æ•°ä½");
 	m_scatter->append(QPointF(0, 0));
 	m_scatter->setMarkerSize(10);
 	m_scatter->setBorderColor(Qt::transparent);

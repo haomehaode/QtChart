@@ -1,4 +1,4 @@
-#ifndef BOXBAR_PLOT_H
+ï»¿#ifndef BOXBAR_PLOT_H
 #define BOXBAR_PLOT_H
 
 #include "plot.h"
@@ -12,7 +12,7 @@
 
 
 //////////////////////////////////////////////////////////////////////////////
-/// ÌõĞÎÍ¼
+/// æ¡å½¢å›¾
 class BoxBarItem :public GraphicsItem
 {
 	Q_OBJECT
@@ -69,19 +69,19 @@ public:
 	virtual void init_series() override;
 
 private:
-	/** Ãû³ÆºÍÏµÁĞÓ³Éä */
+	/** åç§°å’Œç³»åˆ—æ˜ å°„ */
 	QMap<QString, QBarSet*> m_name2series;
-	/** Ãû³ÆºÍÌõĞÎÍ¼Ó³Éä */
+	/** åç§°å’Œæ¡å½¢å›¾æ˜ å°„ */
 	QMap<QString,BoxBarItem*> m_name2item;
-	/** X Öá */
+	/** X è½´ */
 	QBarCategoryAxis* m_axisX = nullptr;
-	/** Y Öá */
+	/** Y è½´ */
 	QValueAxis* m_axisY = nullptr;
-	/** X Öá */
+	/** X è½´ */
 	QStringList m_axisx_list;
-	/** ÌõĞÎÍ¼ */
+	/** æ¡å½¢å›¾ */
 	QStackedBarSeries* m_series = nullptr;
-	/** »æ»­Ä£Ê½ */
+	/** ç»˜ç”»æ¨¡å¼ */
 	BoxBarType m_boxbartype = MEAN;
 
 };

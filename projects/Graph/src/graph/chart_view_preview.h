@@ -1,4 +1,4 @@
-#ifndef CHART_VIEW_PREVIEW_H
+ï»¿#ifndef CHART_VIEW_PREVIEW_H
 #define CHART_VIEW_PREVIEW_H
 
 #include <QHash>
@@ -8,7 +8,7 @@
 class ChartView;
 class QMouseEvent;
 
-/** ¿ªÊ¼Ô¤ÀÀ */
+/** å¼€å§‹é¢„è§ˆ */
 #define BEGIN_PREVIEW -1
 
 class ChartViewPreview 
@@ -17,9 +17,9 @@ class ChartViewPreview
 public:
 
 	virtual ~ChartViewPreview();
-	/** ÊÇ·ñÕıÔÚÔ¤ÀÀ */
+	/** æ˜¯å¦æ­£åœ¨é¢„è§ˆ */
 	static bool is_previewing(ChartView* view);
-	/** Íê³É²¢ÍË³öËùÓĞµÄ»æÖÆ */
+	/** å®Œæˆå¹¶é€€å‡ºæ‰€æœ‰çš„ç»˜åˆ¶ */
 	static void finish_all(ChartView* view);
 
 	static void on_mouse_move(ChartView* view, QMouseEvent* event);
@@ -28,32 +28,32 @@ public:
 
 public:
 	/**
-	* \brief ×ÓÀàÊµÏÖ£¬»æÖÆ½ø¶ÈÍÆ½ø
-	* @param point Êó±êÔÚ³¡¾°µÄ×ø±ê
+	* \brief å­ç±»å®ç°ï¼Œç»˜åˆ¶è¿›åº¦æ¨è¿›
+	* @param point é¼ æ ‡åœ¨åœºæ™¯çš„åæ ‡
 	*/
 	virtual void on_advance_preview(QPointF& point) {}
-	/** ×ÓÀàÊµÏÖ£¬Íê³ÉÍ¼Ôª»æÖÆ */
+	/** å­ç±»å®ç°ï¼Œå®Œæˆå›¾å…ƒç»˜åˆ¶ */
 	virtual void on_finish_preview() {}
 
 protected:
-	/** ÉèÖÃÊı¾İ,¿ªÊ¼Ô¤ÀÀ */
+	/** è®¾ç½®æ•°æ®,å¼€å§‹é¢„è§ˆ */
 	void begin_preview(ChartView* view);
 	/**
-	* \brief ×ÓÀàÊµÏÖ£¬Êó±êÔÚËùÊôµÄÍ¼ĞÎÊÓÍ¼´°¿ÚÒÆ¶¯
-	* @param point Êó±êÔÚ³¡¾°µÄ×ø±ê
+	* \brief å­ç±»å®ç°ï¼Œé¼ æ ‡åœ¨æ‰€å±çš„å›¾å½¢è§†å›¾çª—å£ç§»åŠ¨
+	* @param point é¼ æ ‡åœ¨åœºæ™¯çš„åæ ‡
 	*/
 	virtual void on_mouse_move(QPointF& point) {}
-	/** »ñÈ¡Ô¤ÀÀ²½Öè */
+	/** è·å–é¢„è§ˆæ­¥éª¤ */
 	int step() const { return m_step; }
-	/** ÉèÖÃÔ¤ÀÀ²½Öè */
+	/** è®¾ç½®é¢„è§ˆæ­¥éª¤ */
 	void set_step(int step);
 
 private:
-	/** Íê³É»æÖÆ²Ù×÷ */
+	/** å®Œæˆç»˜åˆ¶æ“ä½œ */
 	void finish_preview();
-	/** ÍÆ½ø»æÖÆ½ø¶È */
+	/** æ¨è¿›ç»˜åˆ¶è¿›åº¦ */
 	void advance_preview(const QPoint& point);
-	/** Êó±êÔÚÊÓÍ¼ÖĞÒÆ¶¯ */
+	/** é¼ æ ‡åœ¨è§†å›¾ä¸­ç§»åŠ¨ */
 	void on_mouse_move(QMouseEvent* event);
 
 protected:
@@ -61,9 +61,9 @@ protected:
 	ChartView* m_view = nullptr;
 
 private:
-	//ÕıÔÚ»æÖÆµÄÍ¼Ôª£¬key ÊÓÍ¼£¬ value Ô¤ÀÀÍ¼Ôª
+	//æ­£åœ¨ç»˜åˆ¶çš„å›¾å…ƒï¼Œkey è§†å›¾ï¼Œ value é¢„è§ˆå›¾å…ƒ
 	static QMap<ChartView*, ChartViewPreview*> s_view2preview;
-	//ÒÑÍê³ÉµÄ²½Öè
+	//å·²å®Œæˆçš„æ­¥éª¤
 	int m_step;
 };
 

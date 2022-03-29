@@ -1,4 +1,4 @@
-#ifndef RADIAL_PLOT_H
+ï»¿#ifndef RADIAL_PLOT_H
 #define RADIAL_PLOT_H
 
 #include "plot.h"
@@ -29,7 +29,7 @@ public:
 	~RadialPlot();
 
 public slots:
-	/** Êó±êÌáÊ¾ */
+	/** é¼ æ ‡æç¤º */
 	virtual void slot_tool_tip(QPieSlice* slice, bool state);
 
 private:
@@ -55,11 +55,11 @@ private:
 	QList<RadialData> m_pie_series;
 
 	QPieSeries* m_series = nullptr;
-	/** ÖĞĞÄÔ²È¦´óĞ¡ */
+	/** ä¸­å¿ƒåœ†åœˆå¤§å° */
 	double m_radial_min = 0.25;
-	/** ÍâÎ§Ô²È¦´óĞ¡ */
+	/** å¤–å›´åœ†åœˆå¤§å° */
 	double m_radial_max = 0.85;
-	/** ¾¶Ïò³¤¶È */
+	/** å¾„å‘é•¿åº¦ */
 	double m_radial_length = 0.6;
 
 };

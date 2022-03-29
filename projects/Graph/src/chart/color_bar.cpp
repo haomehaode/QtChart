@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "color_bar.h"
 #include <QPainter>
@@ -230,16 +230,16 @@ void ColorBar::draw_color_title(QPainter* painter, QRectF rect)
 void ColorBar::init_colors()
 {
 	QColor color;
-	float colorBarLength = 343.0;//ÉèÖÃÑÕÉ«ÌõµÄ³¤¶È
+	float colorBarLength = 343.0;//è®¾ç½®é¢œè‰²æ¡çš„é•¿åº¦
 
-	//------ÉèÖÃÎªgrayÑÕÉ«Ìõ---------//
+	//------è®¾ç½®ä¸ºgrayé¢œè‰²æ¡---------//
 	for (int i = 0; i <= colorBarLength; i++)// gray
 	{
 		color.setHsv(0, 0, (colorBarLength - i) / colorBarLength * 255);
 		gray_colors.append(color);
 	}
 
-	//------ÉèÖÃÎªjetÑÕÉ«Ìõ---------//
+	//------è®¾ç½®ä¸ºjeté¢œè‰²æ¡---------//
 	float tempLength = colorBarLength / 4;
 	for (int i = 0; i < tempLength / 2; i++)
 	{
@@ -266,13 +266,13 @@ void ColorBar::init_colors()
 		color.setRgbF((colorBarLength - i + tempLength / 2) / (tempLength), 0, 0);
 		jet_colors.append(color);
 	}
-	//------ÉèÖÃÎªhsvÑÕÉ«Ìõ---------//
+	//------è®¾ç½®ä¸ºhsvé¢œè‰²æ¡---------//
 	for (int i = 0; i <= colorBarLength; i++)
 	{
 		color.setHsvF(i / colorBarLength, 1, 1);
 		hsv_colors.append(color);
 	}
-	//------ÉèÖÃÎªhotÑÕÉ«Ìõ---------//
+	//------è®¾ç½®ä¸ºhoté¢œè‰²æ¡---------//
 	tempLength = colorBarLength / 2.5;
 	for (int i = 0; i < tempLength / 2; i++)
 	{

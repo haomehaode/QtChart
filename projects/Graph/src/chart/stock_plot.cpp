@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "stock_plot.h"
 #include <QBarCategoryAxis>
@@ -15,64 +15,64 @@ StockPlot::StockPlot(QWidget *parent)
 
 StockPlot::~StockPlot()
 {
-	//QCandlestickSeries³£ÓÃº¯Êý£º
-	//append(self, set)£º½«ÓÉsetÖ¸¶¨µÄµ¥¸öÖòÌ¨ÌõÄ¿Ìí¼Óµ½ÖòÌ¨Í¼ÖÐ£¬²¢»ñµÃÆäËùÓÐÈ¨¡£Èç¹û¸ÃÏîÎª¿Õ»òÒÑÔÚÏµÁÐÖÐ£¬Ôò²»»á¸½¼Ó¸ÃÏî¡£Èç¹ûÌí¼Ó³É¹¦·µ»ØTrue£¬·ñÔò·µ»ØFalse¡£
-	//clear(self) : ÓÀ¾ÃÉ¾³ýÍ¼ÖÐµÄËùÓÐÌõÄ¿¡£
-	//remove(self, set)£º´ÓÖòÌ¨Í¼ÖÐÉ¾³ýsetÖ¸¶¨µÄÌõÄ¿¡£
-	//take(self, set)£º´ÓÍ¼ÖÐ»ñÈ¡ÓÉsetÖ¸¶¨µÄµ¥¸öÌõÄ¿¡£µ«²»É¾³ý¸ÃÌõÄ¿¡£
-	//setBodyOutlineVisible(self, bodyOutlineVisible)£ºÉèÖÃÖòÌ¨ÂÖÀªÊÇ·ñ¿É¼û¡£
-	//setBodyWidth(self, bodyWidth)£ºÉèÖÃÖòÌ¨ÌõÄ¿µÄÏà¶Ô¿í¶È£¬·¶Î§Îª0.0µ½1.0¡£
-	//setBrush(self, brush)£ºÉèÖÃÖòÌ¨ÌõÄ¿µÄ»­Ë¢¡£
-	//setPen(self, pen)£ºÉèÖÃÖòÌ¨ÌõÄ¿ÏßÌõµÄ»­±Ê¡£
-	//setCapsVisible(self, capsVisible)£ºÉèÖÃÖòÌ¨ÌõÄ¿¸ÇÊÇ·ñ¿É¼û¡£
-	//setCapsWidth(self, capsWidth)£º ÉèÖÃÖòÌ¨ÌõÄ¿¸ÇµÄ¿í¶È¡£
-	//setDecreasingColor(self, decreasingColor)£ºÉèÖÃÖòÌ¨ÌõÄ¿µÝ¼õÑÕÉ«¡£
-	//setIncreasingColor(self, increasingColor)£ºÉèÖÃÖòÌ¨ÌõÄ¿µÝÔöÑÕÉ«¡£
-	//setMaximumColumnWidth(self, maximumColumnWidth)£ºÉèÖÃÖòÌ¨ÌõÄ¿µÄ×î´ó¿í¶È(ÒÔÏñËØÎªµ¥Î»¡£ÉèÖÃÎª¸ºÖµ±íÊ¾Ã»ÓÐ×î´ó¿í¶È¡£ËùÓÐ¸ºÖµ¶¼½«×ª»»Îª - 1.0)¡£
-	//setMinimumColumnWidth(self, minimumColumnWidth)£ºÉèÖÃÖòÌ¨ÌõÄ¿µÄ×îÐ¡¿í¶È(ÒÔÏñËØÎªµ¥Î»¡£ÉèÖÃÎª¸ºÖµ±íÊ¾Ã»ÓÐ×î´ó¿í¶È¡£ËùÓÐ¸ºÖµ¶¼½«×ª»»Îª - 1.0)¡£
+	//QCandlestickSerieså¸¸ç”¨å‡½æ•°ï¼š
+	//append(self, set)ï¼šå°†ç”±setæŒ‡å®šçš„å•ä¸ªçƒ›å°æ¡ç›®æ·»åŠ åˆ°çƒ›å°å›¾ä¸­ï¼Œå¹¶èŽ·å¾—å…¶æ‰€æœ‰æƒã€‚å¦‚æžœè¯¥é¡¹ä¸ºç©ºæˆ–å·²åœ¨ç³»åˆ—ä¸­ï¼Œåˆ™ä¸ä¼šé™„åŠ è¯¥é¡¹ã€‚å¦‚æžœæ·»åŠ æˆåŠŸè¿”å›žTrueï¼Œå¦åˆ™è¿”å›žFalseã€‚
+	//clear(self) : æ°¸ä¹…åˆ é™¤å›¾ä¸­çš„æ‰€æœ‰æ¡ç›®ã€‚
+	//remove(self, set)ï¼šä»Žçƒ›å°å›¾ä¸­åˆ é™¤setæŒ‡å®šçš„æ¡ç›®ã€‚
+	//take(self, set)ï¼šä»Žå›¾ä¸­èŽ·å–ç”±setæŒ‡å®šçš„å•ä¸ªæ¡ç›®ã€‚ä½†ä¸åˆ é™¤è¯¥æ¡ç›®ã€‚
+	//setBodyOutlineVisible(self, bodyOutlineVisible)ï¼šè®¾ç½®çƒ›å°è½®å»“æ˜¯å¦å¯è§ã€‚
+	//setBodyWidth(self, bodyWidth)ï¼šè®¾ç½®çƒ›å°æ¡ç›®çš„ç›¸å¯¹å®½åº¦ï¼ŒèŒƒå›´ä¸º0.0åˆ°1.0ã€‚
+	//setBrush(self, brush)ï¼šè®¾ç½®çƒ›å°æ¡ç›®çš„ç”»åˆ·ã€‚
+	//setPen(self, pen)ï¼šè®¾ç½®çƒ›å°æ¡ç›®çº¿æ¡çš„ç”»ç¬”ã€‚
+	//setCapsVisible(self, capsVisible)ï¼šè®¾ç½®çƒ›å°æ¡ç›®ç›–æ˜¯å¦å¯è§ã€‚
+	//setCapsWidth(self, capsWidth)ï¼š è®¾ç½®çƒ›å°æ¡ç›®ç›–çš„å®½åº¦ã€‚
+	//setDecreasingColor(self, decreasingColor)ï¼šè®¾ç½®çƒ›å°æ¡ç›®é€’å‡é¢œè‰²ã€‚
+	//setIncreasingColor(self, increasingColor)ï¼šè®¾ç½®çƒ›å°æ¡ç›®é€’å¢žé¢œè‰²ã€‚
+	//setMaximumColumnWidth(self, maximumColumnWidth)ï¼šè®¾ç½®çƒ›å°æ¡ç›®çš„æœ€å¤§å®½åº¦(ä»¥åƒç´ ä¸ºå•ä½ã€‚è®¾ç½®ä¸ºè´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰æœ€å¤§å®½åº¦ã€‚æ‰€æœ‰è´Ÿå€¼éƒ½å°†è½¬æ¢ä¸º - 1.0)ã€‚
+	//setMinimumColumnWidth(self, minimumColumnWidth)ï¼šè®¾ç½®çƒ›å°æ¡ç›®çš„æœ€å°å®½åº¦(ä»¥åƒç´ ä¸ºå•ä½ã€‚è®¾ç½®ä¸ºè´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰æœ€å¤§å®½åº¦ã€‚æ‰€æœ‰è´Ÿå€¼éƒ½å°†è½¬æ¢ä¸º - 1.0)ã€‚
 
-	//QCandlestickSeries³£ÓÃÐÅºÅ£º
-	//bodyOutlineVisibilityChanged(self)£ºÖòÌ¨ÌõÄ¿Ö÷ÌåÂÖÀªµÄ¿É¼ûÐÔ¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//bodyWidthChanged(self)£ºÖòÌ¨ÌõÄ¿µÄ¿í¶È¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//brushChanged(self)£ºÖòÌ¨ÌõÄ¿»­Ë¢¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//candlestickSetsAdded(self, sets)£ºµ±setsÖ¸¶¨µÄÖòÌ¨ÌõÄ¿Ìí¼Óµ½ÖòÌ¨Í¼ÖÐÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//candlestickSetsRemoved(self, sets)£º´ÓÖòÌ¨Í¼ÖÐÉ¾³ýsetsÖ¸¶¨µÄÖòÌ¨ÌõÄ¿Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//capsVisibilityChanged(self)£ºÖòÌ¨ÌõÄ¿¸ÇµÄ¿É¼ûÊôÐÔ¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//capsWidthChanged(self) : ÖòÌ¨ÌõÄ¿¸ÇµÄ¿í¶È¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//clicked(self, set) : µ¥»÷Í¼±íÉÏÓÉsetÖ¸¶¨µÄÖòÌ¨ÌõÄ¿Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//countChanged(self)£ºµ±ÖòÌ¨Í¼ÖÐÖÐÖòÌ¨ÌõÄ¿µÄÊýÁ¿·¢Éú¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//decreasingColorChanged(self) : µ±ÖòÌ¨ÌõÄ¿µÄÑÕÉ«¼õÉÙÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//doubleClicked(self, set)£ºË«»÷Í¼±íÉÏÓÉsetÖ¸¶¨µÄÖòÌ¨ÌõÄ¿Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//hovered(self, status, set)£ºµ±Êó±êÐüÍ£ÔÚËùÖ¸¶¨µÄÖòÌ¨ÌõÄ¿setÊ±£¬Õâ¸öÐÅºÅ±»·¢Éä¡£µ±Êó±êÒÆÖÁ¸ÃÌõÄ¿ÉÏ·½Ê±£¬state±äÎªTrue£¬¶øµ±Êó±êÔÙ´ÎÒÆ¿ªÊ±£¬state±äÎªFalse¡£
-	//increasingColorChanged(self)£ºÖòÌ¨ÌõÄ¿ÑÕÉ«Ôö¼ÓÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//maximumColumnWidthChanged(self) : ÖòÌ¨ÌõÄ¿µÄ×î´óÁÐ¿í·¢Éú±ä»¯Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//minimumColumnWidthChanged(self)£ºÖòÌ¨ÌõÄ¿µÄ×îÐ¡ÁÐ¿í·¢Éú±ä»¯Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//penChanged(self)£ºÖòÌ¨Í¼µÄ»­±Ê·¢Éú¸ü¸ÄÊ±»á·¢³ö´ËÐÅºÅ¡£
-	//pressed(self, set)£ºµ±ÓÃ»§µ¥»÷setÖ¸¶¨µÄÖòÌ¨ÌõÄ¿²¢°´×¡Êó±ê°´Å¥Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//released(self, set)£ºµ±ÓÃ»§ÊÍ·ÅsetËùÖ¸¶¨µÄÖòÌ¨ÌõÄ¿ÉÏµÄÊó±êÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
+	//QCandlestickSerieså¸¸ç”¨ä¿¡å·ï¼š
+	//bodyOutlineVisibilityChanged(self)ï¼šçƒ›å°æ¡ç›®ä¸»ä½“è½®å»“çš„å¯è§æ€§æ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//bodyWidthChanged(self)ï¼šçƒ›å°æ¡ç›®çš„å®½åº¦æ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//brushChanged(self)ï¼šçƒ›å°æ¡ç›®ç”»åˆ·æ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//candlestickSetsAdded(self, sets)ï¼šå½“setsæŒ‡å®šçš„çƒ›å°æ¡ç›®æ·»åŠ åˆ°çƒ›å°å›¾ä¸­æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//candlestickSetsRemoved(self, sets)ï¼šä»Žçƒ›å°å›¾ä¸­åˆ é™¤setsæŒ‡å®šçš„çƒ›å°æ¡ç›®æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//capsVisibilityChanged(self)ï¼šçƒ›å°æ¡ç›®ç›–çš„å¯è§å±žæ€§æ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//capsWidthChanged(self) : çƒ›å°æ¡ç›®ç›–çš„å®½åº¦æ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//clicked(self, set) : å•å‡»å›¾è¡¨ä¸Šç”±setæŒ‡å®šçš„çƒ›å°æ¡ç›®æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//countChanged(self)ï¼šå½“çƒ›å°å›¾ä¸­ä¸­çƒ›å°æ¡ç›®çš„æ•°é‡å‘ç”Ÿæ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//decreasingColorChanged(self) : å½“çƒ›å°æ¡ç›®çš„é¢œè‰²å‡å°‘æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//doubleClicked(self, set)ï¼šåŒå‡»å›¾è¡¨ä¸Šç”±setæŒ‡å®šçš„çƒ›å°æ¡ç›®æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//hovered(self, status, set)ï¼šå½“é¼ æ ‡æ‚¬åœåœ¨æ‰€æŒ‡å®šçš„çƒ›å°æ¡ç›®setæ—¶ï¼Œè¿™ä¸ªä¿¡å·è¢«å‘å°„ã€‚å½“é¼ æ ‡ç§»è‡³è¯¥æ¡ç›®ä¸Šæ–¹æ—¶ï¼Œstateå˜ä¸ºTrueï¼Œè€Œå½“é¼ æ ‡å†æ¬¡ç§»å¼€æ—¶ï¼Œstateå˜ä¸ºFalseã€‚
+	//increasingColorChanged(self)ï¼šçƒ›å°æ¡ç›®é¢œè‰²å¢žåŠ æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//maximumColumnWidthChanged(self) : çƒ›å°æ¡ç›®çš„æœ€å¤§åˆ—å®½å‘ç”Ÿå˜åŒ–æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//minimumColumnWidthChanged(self)ï¼šçƒ›å°æ¡ç›®çš„æœ€å°åˆ—å®½å‘ç”Ÿå˜åŒ–æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//penChanged(self)ï¼šçƒ›å°å›¾çš„ç”»ç¬”å‘ç”Ÿæ›´æ”¹æ—¶ä¼šå‘å‡ºæ­¤ä¿¡å·ã€‚
+	//pressed(self, set)ï¼šå½“ç”¨æˆ·å•å‡»setæŒ‡å®šçš„çƒ›å°æ¡ç›®å¹¶æŒ‰ä½é¼ æ ‡æŒ‰é’®æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//released(self, set)ï¼šå½“ç”¨æˆ·é‡Šæ”¾setæ‰€æŒ‡å®šçš„çƒ›å°æ¡ç›®ä¸Šçš„é¼ æ ‡æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
 
-	//QCandlestickSet³£ÓÃº¯Êý£º
-	//setBrush(self, brush)£ºÉèÖÃÌõÄ¿µÄ»­Ë¢Îªbrush¡£
-	//setPen(self, pen)£ºÉèÖÃÌõÄ¿µÄ»­±ÊÎªpen¡£
-	//setClose(self, close)£ºÉèÖÃÌõÄ¿µÄÊÕÅÌ¼ÛÎªclose¡£
-	//setHigh(self, high)£ºÉèÖÃÌõÄ¿µÄÉÏÏÞÖµÎªhigh¡£
-	//setLow(self, low)£ºÉèÖÃÌõÄ¿µÄÏÂÏÞÖµÎªlow¡£
-	//setOpen(self, open)£ºÉèÖÃÌõÄ¿µÄ¿ªÅÌ¼Û¡£
-	//setTimestamp(self, timestamp)£ºÉèÖÃÌõÄ¿µÄÊ±¼ä´Á¡£
+	//QCandlestickSetå¸¸ç”¨å‡½æ•°ï¼š
+	//setBrush(self, brush)ï¼šè®¾ç½®æ¡ç›®çš„ç”»åˆ·ä¸ºbrushã€‚
+	//setPen(self, pen)ï¼šè®¾ç½®æ¡ç›®çš„ç”»ç¬”ä¸ºpenã€‚
+	//setClose(self, close)ï¼šè®¾ç½®æ¡ç›®çš„æ”¶ç›˜ä»·ä¸ºcloseã€‚
+	//setHigh(self, high)ï¼šè®¾ç½®æ¡ç›®çš„ä¸Šé™å€¼ä¸ºhighã€‚
+	//setLow(self, low)ï¼šè®¾ç½®æ¡ç›®çš„ä¸‹é™å€¼ä¸ºlowã€‚
+	//setOpen(self, open)ï¼šè®¾ç½®æ¡ç›®çš„å¼€ç›˜ä»·ã€‚
+	//setTimestamp(self, timestamp)ï¼šè®¾ç½®æ¡ç›®çš„æ—¶é—´æˆ³ã€‚
 
-	//QCandlestickSet³£ÓÃÐÅºÅ£º
-	//brushChanged(self)£º¸ü¸ÄÊ±»­Ë¢£¬½«·¢³ö´ËÐÅºÅ¡£
-	//penChanged(self)£º¸ü¸Ä»­±ÊÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//clicked(self)£ºµ¥»÷ÌõÄ¿Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//doubleClicked(self)£ºË«»÷ÌõÄ¿Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//hovered(self, status)£ºµ±Êó±êÐüÍ£ÔÚÌõÄ¿ÉÏÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//pressed(self)£ºµ±ÓÃ»§µ¥»÷Ìõ²¢°´×¡Êó±ê°´Å¥Ê±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//released(self)£ºµ±ÓÃ»§ÊÍ·Å¶ÔÌõÄ¿µÄÊÍ·ÅÊó±êÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//closeChanged(self)£ºÌõÄ¿ÊÕÅÌ¼Û·¢Éú¸Ä±äÊ±·¢³ö´ËÐÅºÅ¡£
-	//highChanged(self)£ºÌõÄ¿ÉÏÏÞÖµ¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//lowChanged(self)£ºÌõÄ¿ÏÂÏÞÖµ¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
-	//openChanged(self)£ºÌõÄ¿¿ªÅÌ¼Û±ä»¯Ê±·¢³ö´ËÐÅºÅ¡£
-	//timestampChanged(self)£ºµ±ÌõÄ¿Ê±¼ä´Á¸ü¸ÄÊ±£¬½«·¢³ö´ËÐÅºÅ¡£
+	//QCandlestickSetå¸¸ç”¨ä¿¡å·ï¼š
+	//brushChanged(self)ï¼šæ›´æ”¹æ—¶ç”»åˆ·ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//penChanged(self)ï¼šæ›´æ”¹ç”»ç¬”æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//clicked(self)ï¼šå•å‡»æ¡ç›®æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//doubleClicked(self)ï¼šåŒå‡»æ¡ç›®æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//hovered(self, status)ï¼šå½“é¼ æ ‡æ‚¬åœåœ¨æ¡ç›®ä¸Šæ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//pressed(self)ï¼šå½“ç”¨æˆ·å•å‡»æ¡å¹¶æŒ‰ä½é¼ æ ‡æŒ‰é’®æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//released(self)ï¼šå½“ç”¨æˆ·é‡Šæ”¾å¯¹æ¡ç›®çš„é‡Šæ”¾é¼ æ ‡æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//closeChanged(self)ï¼šæ¡ç›®æ”¶ç›˜ä»·å‘ç”Ÿæ”¹å˜æ—¶å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//highChanged(self)ï¼šæ¡ç›®ä¸Šé™å€¼æ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//lowChanged(self)ï¼šæ¡ç›®ä¸‹é™å€¼æ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//openChanged(self)ï¼šæ¡ç›®å¼€ç›˜ä»·å˜åŒ–æ—¶å‘å‡ºæ­¤ä¿¡å·ã€‚
+	//timestampChanged(self)ï¼šå½“æ¡ç›®æ—¶é—´æˆ³æ›´æ”¹æ—¶ï¼Œå°†å‘å‡ºæ­¤ä¿¡å·ã€‚
 }
 
 void StockPlot::slot_tool_tip(bool status, QCandlestickSet* set)
@@ -80,7 +80,7 @@ void StockPlot::slot_tool_tip(bool status, QCandlestickSet* set)
 	if (m_tooltip == nullptr)
 		m_tooltip = new ToolTip(m_chart,this);
 	if (status) {
-		m_tooltip->setText(QString("¿ªÅÌ: %1 \nÊÕÅÌ: %2\n×î¸ß: %3\n×îµÍ: %4 ")
+		m_tooltip->setText(QString("å¼€ç›˜: %1 \næ”¶ç›˜: %2\næœ€é«˜: %3\næœ€ä½Ž: %4 ")
 			.arg(set->open()).arg(set->close()).arg(set->high()).arg(set->low()));
 		QPointF point = m_chartview->mapFromGlobal(QCursor::pos());
 		m_tooltip->setAnchor(point);

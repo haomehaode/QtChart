@@ -1,4 +1,4 @@
-#ifndef STOCK_PLOT_H
+ï»¿#ifndef STOCK_PLOT_H
 #define STOCK_PLOT_H
 
 #include "plot.h"
@@ -22,7 +22,7 @@ public:
 	~StockPlot();
 
 public slots:
-	/** Êó±êÌáÊ¾ */
+	/** é¼ æ ‡æç¤º */
 	virtual void slot_tool_tip(bool status, QCandlestickSet* set);
 
 public:
@@ -39,19 +39,19 @@ public:
 
 
 private:
-	/** Êı¾İ¼ÆËã */
+	/** æ•°æ®è®¡ç®— */
 	void prepare_data(QList<CandlestickData>& data_list);
 
 private:
-	/** Ãû³ÆºÍÏµÁĞÓ³Éä */
+	/** åç§°å’Œç³»åˆ—æ˜ å°„ */
 	QMap<QString, QCandlestickSeries*> m_name2series;
-	/** X Öá */
+	/** X è½´ */
 	QBarCategoryAxis* m_axisX = nullptr;
-	/** Y Öá */
+	/** Y è½´ */
 	QValueAxis* m_axisY = nullptr;
-	/** ¼ÇÂ¼×ø±êÖá·¶Î§ */
+	/** è®°å½•åæ ‡è½´èŒƒå›´ */
 	QStack<double> m_range[4];
-	/** X ÖáÊ±¼ä */
+	/** X è½´æ—¶é—´ */
 	QStringList m_axisx_list;
 };
 

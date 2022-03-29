@@ -1,4 +1,4 @@
-#ifndef RADAR_PLOT_H
+ï»¿#ifndef RADAR_PLOT_H
 #define RADAR_PLOT_H
 
 #include "plot.h"
@@ -12,19 +12,19 @@
 
 enum RadarType
 {
-	Radar = 0,  //À×´ïÍ¼
-	Spider		//Ö©ÖëÍøÍ¼
+	Radar = 0,  //é›·è¾¾å›¾
+	Spider		//èœ˜è››ç½‘å›¾
 };
 
 enum DrawTpye
 {
-	Scatter = 0,	//É¢µãÍ¼
-	Line,			//Á¬ÏßÍ¼
-	Area			//ÇøÓòÍ¼
+	Scatter = 0,	//æ•£ç‚¹å›¾
+	Line,			//è¿çº¿å›¾
+	Area			//åŒºåŸŸå›¾
 };
 
 //////////////////////////////////////////////////////////////////////////////
-/// À×´ïÍ¼
+/// é›·è¾¾å›¾
 class RadarItem :public GraphicsItem
 {
 	Q_OBJECT
@@ -41,9 +41,9 @@ protected:
 
 private:
 	QChart* m_chart = nullptr;
-	/** À×´ïÏîÊı */
+	/** é›·è¾¾é¡¹æ•° */
 	int m_angular = 5;
-	/** À×´ïÈ¦Êı */
+	/** é›·è¾¾åœˆæ•° */
 	int m_radial = 6;
 };
 
@@ -76,19 +76,19 @@ protected:
 	virtual void init_series() override;
 
 private:
-	/** Ö©ÖëÍøÍ¼ */
+	/** èœ˜è››ç½‘å›¾ */
 	RadarItem* item = nullptr;
-	/** ½Ç¶ÈÖµ/À×´ïÏî */
+	/** è§’åº¦å€¼/é›·è¾¾é¡¹ */
 	QCategoryAxis* m_angularAxis = nullptr;
-	/** À×´ïÖµ/À×´ïÈ¦Êı */
+	/** é›·è¾¾å€¼/é›·è¾¾åœˆæ•° */
 	QValueAxis* m_radialAxis = nullptr;
-	/** Í¼ÀàĞÍ */
+	/** å›¾ç±»å‹ */
 	RadarType m_radartype = Spider;
-	/** ÏßÀàĞÍ */
+	/** çº¿ç±»å‹ */
 	DrawTpye m_drawtype = Line;
-	/** À×´ïÏîÊı */
+	/** é›·è¾¾é¡¹æ•° */
 	int count = 0;
-	/** Ãû³ÆºÍÏµÁĞÓ³Éä */
+	/** åç§°å’Œç³»åˆ—æ˜ å°„ */
 	QMap<QString, QLineSeries*> m_name2series;
 };
 

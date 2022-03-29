@@ -1,4 +1,4 @@
-#ifndef COLOR_PLOT_H
+ï»¿#ifndef COLOR_PLOT_H
 #define COLOR_PLOT_H
 
 #include "plot.h"
@@ -32,13 +32,13 @@ public:
 	virtual void init_series() override;
 
 private:
-	/** ÑÕÉ«Ìõ */
+	/** é¢œè‰²æ¡ */
 	ColorBar* m_color_item = nullptr;
-	/** X Öá */
+	/** X è½´ */
 	QValueAxis* m_axisX = nullptr;
-	/** Y Öá */
+	/** Y è½´ */
 	QValueAxis* m_axisY = nullptr;
-	/** Z ÖµºÍÉ¢µã */
+	/** Z å€¼å’Œæ•£ç‚¹ */
 	QMap<double, QScatterSeries*> value2series; 
 };
 

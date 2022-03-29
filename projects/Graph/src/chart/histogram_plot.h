@@ -1,4 +1,4 @@
-#ifndef HISTOGRAM_PLOT_H
+ï»¿#ifndef HISTOGRAM_PLOT_H
 #define HISTOGRAM_PLOT_H
 
 #include "plot.h"
@@ -8,7 +8,7 @@
 #include <QScatterSeries>
 
 //////////////////////////////////////////////////////////////////////////////
-/// Ö±·½Í¼
+/// ç›´æ–¹å›¾
 class HistogramItem :public GraphicsItem
 {
 	Q_OBJECT
@@ -70,15 +70,15 @@ protected:
 
 
 private:
-	/** Ãû³ÆºÍÏµÁĞÓ³Éä */
+	/** åç§°å’Œç³»åˆ—æ˜ å°„ */
 	QMap<QString, Histogram*> m_name2itemlist;
-	/** X Öá */
+	/** X è½´ */
 	QValueAxis* m_axisX = nullptr;
-	/** Y Öá */
+	/** Y è½´ */
 	QValueAxis* m_axisY = nullptr;
-	/** ¼ä¾à */
+	/** é—´è· */
 	double m_interval = 2;
-	/** ×ÜÊı */
+	/** æ€»æ•° */
 	int m_count = 0;
 };
 

@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "chart_view.h"
 #include "QGraphicsView"
@@ -43,7 +43,7 @@ ChartView::ChartView(QChart* chart, QWidget* parent)
 {
 	setRenderHint(QPainter::Antialiasing);
 
-	//Ê¹ÄÜ½ÓÊÕµ½Êó±êÔÚÊÓÍ¼´°¿ÚÒÆ¶¯µÄÊÂ¼þ
+	//ä½¿èƒ½æŽ¥æ”¶åˆ°é¼ æ ‡åœ¨è§†å›¾çª—å£ç§»åŠ¨çš„äº‹ä»¶
 	setMouseTracking(true);
 
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -54,7 +54,7 @@ ChartView::ChartView(QChart* chart, QWidget* parent)
 	m_chart->setSelected(true);
 	scene()->addItem(m_chart);
 
-	//QGraphicsEllipseItem* item = new QGraphicsEllipseItem(0, 0, 100, 100);//x,y Îª×óÉÏ½ÇµÄÍ¼Ôª¾Ö²¿×ø±ê£¬Í¼ÔªÖÐÐÄµãÎª0,0
+	//QGraphicsEllipseItem* item = new QGraphicsEllipseItem(0, 0, 100, 100);//x,y ä¸ºå·¦ä¸Šè§’çš„å›¾å…ƒå±€éƒ¨åæ ‡ï¼Œå›¾å…ƒä¸­å¿ƒç‚¹ä¸º0,0
 	//item->setFlags(QGraphicsItem::ItemIsMovable| QGraphicsItem::ItemIsSelectable);
 	//item->setZValue(1);
 	//item->setPos(10, 10);
@@ -127,7 +127,7 @@ void ChartView::resizeEvent(QResizeEvent* event)
 
 void ChartView::mousePressEvent(QMouseEvent* event)
 {
-	//Êó±ê×ó¼ü°´ÏÂ£¬¼ÇÂ¼beginPoint
+	//é¼ æ ‡å·¦é”®æŒ‰ä¸‹ï¼Œè®°å½•beginPoint
 	if (event->button() == Qt::LeftButton)
 		m_begin_point = event->pos();
 	else if (event->button() == Qt::MiddleButton)
@@ -138,18 +138,18 @@ void ChartView::mousePressEvent(QMouseEvent* event)
 	}
 	//else if (event->button() == Qt::RightButton)
 	//{
-	//	QPointF pointScene = mapToScene(event->pos()); //×ª»»µ½Scene×ø±ê
+	//	QPointF pointScene = mapToScene(event->pos()); //è½¬æ¢åˆ°Sceneåæ ‡
 	//	QGraphicsItem* item = NULL;
-	//	item = scene()->itemAt(pointScene, transform()); //»ñÈ¡¹â±êÏÂµÄ»æÍ¼Ïî
+	//	item = scene()->itemAt(pointScene, transform()); //èŽ·å–å…‰æ ‡ä¸‹çš„ç»˜å›¾é¡¹
 	//	auto lost= scene()->items(pointScene);
 
 	//	QMenu menu(this);
-	//	menu.addAction(tr("Í¼±íÉèÖÃ"), this, SLOT(slot_chart_config()));
-	//	menu.addAction(tr("ÇúÏßÉèÖÃ"), this, SLOT(slot_series_config()));
-	//	menu.addAction(tr("×ø±êÖáÉèÖÃ"), this, SLOT(slot_axis_config()));
+	//	menu.addAction(tr("å›¾è¡¨è®¾ç½®"), this, SLOT(slot_chart_config()));
+	//	menu.addAction(tr("æ›²çº¿è®¾ç½®"), this, SLOT(slot_series_config()));
+	//	menu.addAction(tr("åæ ‡è½´è®¾ç½®"), this, SLOT(slot_axis_config()));
 	//	menu.addSeparator();
-	//	menu.addAction(tr("µ¼³öÍ¼Æ¬"));
-	//	menu.addAction(tr("´òÓ¡"));
+	//	menu.addAction(tr("å¯¼å‡ºå›¾ç‰‡"));
+	//	menu.addAction(tr("æ‰“å°"));
 	//	menu.exec(QCursor::pos());
 	//}
 	QGraphicsView::mousePressEvent(event);
@@ -173,7 +173,7 @@ void ChartView::mouseReleaseEvent(QMouseEvent* event)
 {
 	if (event->button() == Qt::LeftButton)
 	{ 
-		//Êó±ê×ó¼üÊÍ·Å£¬»ñÈ¡¾ØÐÎ¿òµÄendPoint,½øÐÐËõ·Å
+		//é¼ æ ‡å·¦é”®é‡Šæ”¾ï¼ŒèŽ·å–çŸ©å½¢æ¡†çš„endPoint,è¿›è¡Œç¼©æ”¾
 		m_end_point = event->pos();
 		//QRectF  rectF;
 		//rectF.setTopLeft(this->m_begin_point);
@@ -182,7 +182,7 @@ void ChartView::mouseReleaseEvent(QMouseEvent* event)
 	}
 	else if (event->button() == Qt::RightButton)
 	{
-		m_chart->zoomReset(); //Êó±êÓÒ¼üÊÍ·Å£¬resetZoom
+		m_chart->zoomReset(); //é¼ æ ‡å³é”®é‡Šæ”¾ï¼ŒresetZoom
 		m_chart->scroll(-m_translate_pos.x(), -m_translate_pos.y());
 		m_translate_pos.setX(0);
 		m_translate_pos.setY(0);
@@ -226,20 +226,20 @@ void ChartView::keyPressEvent(QKeyEvent* event)
 
 void ChartView::wheelEvent(QWheelEvent* event)
 {
-	// ÉèÖÃ±ÈÀý
+	// è®¾ç½®æ¯”ä¾‹
 	qreal ratio = std::pow(0.999, event->delta());
-	// 1. ¶ÁÈ¡ÊÓÍ¼»ù±¾ÐÅÏ¢
+	// 1. è¯»å–è§†å›¾åŸºæœ¬ä¿¡æ¯
 	QRectF rect = m_chart->plotArea();
 	QPointF pos = rect.center();
-	// 2. Ë®Æ½µ÷Õû
+	// 2. æ°´å¹³è°ƒæ•´
 	rect.setWidth(rect.width() * ratio);
-	// 3. ÊúÖ±µ÷Õû
+	// 3. ç«–ç›´è°ƒæ•´
 	rect.setHeight(rect.height() * ratio);
-	// 4. ¼ÆËãÊÓµã£¬ÈÃÊó±êµã»÷µÄÎ»ÖÃ¾¡Á¿±£³Ö²»¶¯(µÈ±È»»Ëã£¬´æÔÚÒ»µãÎó²î)
+	// 4. è®¡ç®—è§†ç‚¹ï¼Œè®©é¼ æ ‡ç‚¹å‡»çš„ä½ç½®å°½é‡ä¿æŒä¸åŠ¨(ç­‰æ¯”æ¢ç®—ï¼Œå­˜åœ¨ä¸€ç‚¹è¯¯å·®)
 	QPointF center(2 * pos - event->pos() - (pos - event->pos()) / ratio);
-	// 5. ÉèÖÃÊÓµã
+	// 5. è®¾ç½®è§†ç‚¹
 	rect.moveCenter(center);
-	// 6. Ìá½»Ëõ·Åµ÷Õû
+	// 6. æäº¤ç¼©æ”¾è°ƒæ•´
 	m_chart->zoomIn(rect);
 
 	QGraphicsView::wheelEvent(event);
@@ -250,18 +250,18 @@ void ChartView::mouseDoubleClickEvent(QMouseEvent* event)
 {
 	if (event->button() == Qt::LeftButton)
 	{
-		//QPointF pointScene = mapToScene(event->pos()); //×ª»»µ½Scene×ø±ê
+		//QPointF pointScene = mapToScene(event->pos()); //è½¬æ¢åˆ°Sceneåæ ‡
 		//QGraphicsItem* item = NULL;
-		//item = scene()->itemAt(pointScene, transform()); //»ñÈ¡¹â±êÏÂµÄ»æÍ¼Ïî
+		//item = scene()->itemAt(pointScene, transform()); //èŽ·å–å…‰æ ‡ä¸‹çš„ç»˜å›¾é¡¹
 		//auto lost = scene()->items(pointScene);
 
 		//QMenu menu(this);
-		//menu.addAction(tr("Í¼±íÉèÖÃ"));
-		//menu.addAction(tr("ÇúÏßÉèÖÃ"));
-		//menu.addAction(tr("×ø±êÖáÉèÖÃ"));
+		//menu.addAction(tr("å›¾è¡¨è®¾ç½®"));
+		//menu.addAction(tr("æ›²çº¿è®¾ç½®"));
+		//menu.addAction(tr("åæ ‡è½´è®¾ç½®"));
 		//menu.addSeparator();
-		//menu.addAction(tr("µ¼³öÍ¼Æ¬"));
-		//menu.addAction(tr("´òÓ¡"));
+		//menu.addAction(tr("å¯¼å‡ºå›¾ç‰‡"));
+		//menu.addAction(tr("æ‰“å°"));
 		//menu.exec(QCursor::pos());
 		//scene()->clearSelection();
 	}

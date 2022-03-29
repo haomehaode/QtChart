@@ -1,4 +1,4 @@
-#ifndef SERIES_CONFIG_H
+﻿#ifndef SERIES_CONFIG_H
 #define SERIES_CONFIG_H
 
 #include <QDialog>

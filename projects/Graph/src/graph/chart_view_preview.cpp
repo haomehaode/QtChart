@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "chart_view_preview.h"
 #include "util.h"
@@ -11,9 +11,9 @@ QMap<ChartView*, ChartViewPreview*> ChartViewPreview::s_view2preview;
 
 ChartViewPreview::~ChartViewPreview()
 {
-	//ÇåÀíÈ«¾ÖÔ¤ÀÀ¶ÔÏó
+	//æ¸…ç†å…¨å±€é¢„è§ˆå¯¹è±¡
 	s_view2preview.remove(m_view);
-	//»Ö¸´Êó±êÐÎ×´
+	//æ¢å¤é¼ æ ‡å½¢çŠ¶
 	m_view->set_cursor_auto();
 }
 
@@ -36,13 +36,13 @@ void ChartViewPreview::begin_preview(ChartView* view)
 {
 	m_view = view;
 
-	//Ò»¸öÊÓÍ¼´°¿ÚÖ»ÄÜÓÐÒ»¸öÔ¤ÀÀ
+	//ä¸€ä¸ªè§†å›¾çª—å£åªèƒ½æœ‰ä¸€ä¸ªé¢„è§ˆ
 	finish_all(m_view);
 
-	//¼ÇÂ¼Ô¤ÀÀÍ¼Ôª
+	//è®°å½•é¢„è§ˆå›¾å…ƒ
 	s_view2preview[m_view] = this;
 
-	//ÏÔÊ¾cad¹â±ê
+	//æ˜¾ç¤ºcadå…‰æ ‡
 	m_view->set_cursor_auto();
 
 	set_step(BEGIN_PREVIEW);

@@ -1,4 +1,4 @@
-#ifndef PLOT_H
+ï»¿#ifndef PLOT_H
 #define PLOT_H
 
 #include "graph_global.h"
@@ -24,52 +24,52 @@ public:
 	~Plot();
 
 public slots:
-	/** Êó±êÌáÊ¾ */
+	/** é¼ æ ‡æç¤º */
 	virtual void slot_tool_tip(QPointF point, bool state);
-	/** Í¼Àıµã»÷ */
+	/** å›¾ä¾‹ç‚¹å‡» */
 	void slot_handle_marker_clicked();
 
 public:
-	/** Í¼±í±êÌâ */
+	/** å›¾è¡¨æ ‡é¢˜ */
 	void add_title(const QString& name);
-	/** Á¬½ÓÍ¼Àı */
+	/** è¿æ¥å›¾ä¾‹ */
 	void connect_markers();
-	/** È¡ÏûÍ¼ÀıÁ¬½Ó */
+	/** å–æ¶ˆå›¾ä¾‹è¿æ¥ */
 	void disconnect_markers();
-	/** ¿ªÊ¼»­Ïß */
+	/** å¼€å§‹ç”»çº¿ */
 	void draw_line();
-	/** ¿ªÊ¼»­¼ıÍ· */
+	/** å¼€å§‹ç”»ç®­å¤´ */
 	void draw_arrows();
 
 protected:
-	/** ³õÊ¼»¯Í¼±í */
+	/** åˆå§‹åŒ–å›¾è¡¨ */
 	virtual void init_chart() = 0;
-	/** ³õÊ¼»¯×ø±êÖá */
+	/** åˆå§‹åŒ–åæ ‡è½´ */
 	virtual void init_axis() = 0;
-	/** ³õÊ¼»¯ÏµÁĞ */
+	/** åˆå§‹åŒ–ç³»åˆ— */
 	virtual void init_series() = 0;
 
 protected:
 	virtual void resizeEvent(QResizeEvent* event) override;
 
 protected:
-	/** Í¼±í */
+	/** å›¾è¡¨ */
 	QChart* m_chart = nullptr;
-	/** ÊÓÍ¼ */
+	/** è§†å›¾ */
 	ChartView* m_chartview = nullptr;
-	/** Êó±êÌáÊ¾ */
+	/** é¼ æ ‡æç¤º */
 	ToolTip* m_tooltip = nullptr;
-	/** X ×îĞ¡Öµ */
+	/** X æœ€å°å€¼ */
 	double m_min_x = DBL_MAX;
-	/** X ×î´óÖµ */
+	/** X æœ€å¤§å€¼ */
 	double m_max_x = DBL_MIN;
-	/** Y ×îĞ¡Öµ */
+	/** Y æœ€å°å€¼ */
 	double m_min_y = DBL_MAX;
-	/** Y ×î´óÖµ */
+	/** Y æœ€å¤§å€¼ */
 	double m_max_y = DBL_MIN;
-	/** Z ×îĞ¡Öµ */
+	/** Z æœ€å°å€¼ */
 	double m_min_z = DBL_MAX;
-	/** Z ×î´óÖµ */
+	/** Z æœ€å¤§å€¼ */
 	double m_max_z = DBL_MIN;
 };
 

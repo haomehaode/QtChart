@@ -1,4 +1,4 @@
-#ifndef GRAPH_GLOBAL_H
+﻿#ifndef GRAPH_GLOBAL_H
 #define GRAPH_GLOBAL_H
 
 #include <QtCore/qglobal.h>

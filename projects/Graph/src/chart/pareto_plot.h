@@ -1,4 +1,4 @@
-#ifndef PARETO_PLOT_H
+ï»¿#ifndef PARETO_PLOT_H
 #define PARETO_PLOT_H
 
 #include "plot.h"
@@ -34,7 +34,7 @@ public:
 	virtual void init_series() override;
 
 private:
-	/** Êı¾İ¼ÆËã */
+	/** æ•°æ®è®¡ç®— */
 	QList<ParetoData>& prepare_data(QList<ParetoData>& value_list);
 
 private:

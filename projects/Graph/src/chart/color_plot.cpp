@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+﻿#pragma execution_character_set("utf-8")
 
 #include "color_plot.h"
 #include "color_bar.h"
@@ -37,7 +37,7 @@ void ColorPlot::set_data(QList<ThirdDData>& value_list)
 			value2series[item.m_z]->append(QPointF(item.m_x, item.m_y));
 		else
 		{
-			QScatterSeries* scatter = new QScatterSeries;  //ɢ��ͼ
+			QScatterSeries* scatter = new QScatterSeries;  //散点图
 			scatter->setMarkerShape(QScatterSeries::MarkerShapeRectangle);
 			scatter->setMarkerSize(3.0);
 			scatter->setBorderColor(Qt::transparent);

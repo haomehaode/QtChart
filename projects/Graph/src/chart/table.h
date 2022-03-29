@@ -1,4 +1,4 @@
-#ifndef TABLE_H
+﻿#ifndef TABLE_H
 #define TABLE_H
 
 #include "graph_global.h"

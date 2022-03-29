@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+ï»¿#pragma execution_character_set("utf-8")
 
 #include "qq_plot.h"
 #include <QtCore/qmath.h>
@@ -71,7 +71,7 @@ void QQPlot::init_axis()
 	m_scatter->attachAxis(m_axisX);
 
 	m_axisY = new QValueAxis();
-	m_axisY->setTitleText("ÆÚÍûÕýÌ¬Öµ");
+	m_axisY->setTitleText("æœŸæœ›æ­£æ€å€¼");
 	m_chart->addAxis(m_axisY, Qt::AlignLeft);
 	m_line_top->attachAxis(m_axisY);
 	m_line_center->attachAxis(m_axisY);
@@ -82,19 +82,19 @@ void QQPlot::init_axis()
 void QQPlot::init_series()
 {
 	m_line_center = new QLineSeries(m_chart);
-	m_line_center->setName("²ÎÕÕÏß");
+	m_line_center->setName("å‚ç…§çº¿");
 	m_line_center->append(QPointF(0, 0));
 
 	m_line_top = new QLineSeries(m_chart);
-	m_line_top->setName("ÉÏÏß°Ù·ÖÎ»Êý");
+	m_line_top->setName("ä¸Šçº¿ç™¾åˆ†ä½æ•°");
 	m_line_top->append(QPointF(0, 0));
 
 	m_line_bottom = new QLineSeries(m_chart);
-	m_line_bottom->setName("ÏÂÏß°Ù·ÖÎ»Êý");
+	m_line_bottom->setName("ä¸‹çº¿ç™¾åˆ†ä½æ•°");
 	m_line_bottom->append(QPointF(0, 0));
 
 	m_scatter = new QScatterSeries();
-	m_scatter->setName("°Ù·ÖÊýÎ»");
+	m_scatter->setName("ç™¾åˆ†æ•°ä½");
 	m_scatter->append(QPointF(0, 0));
 	m_scatter->setMarkerSize(10);
 	m_scatter->setBorderColor(Qt::transparent);

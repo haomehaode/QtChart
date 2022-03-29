@@ -1,4 +1,4 @@
-#pragma execution_character_set("utf-8")
+﻿#pragma execution_character_set("utf-8")
 
 #include "density_plot.h"
 #include "color_bar.h"
@@ -46,7 +46,7 @@ void DensityPlot::set_data(QList<QPointF>& pos_list)
 			value2series[zi]->append(x, y);
 		else
 		{
-			QScatterSeries* scatter = new QScatterSeries;  //ɢ��ͼ
+			QScatterSeries* scatter = new QScatterSeries;  //散点图
 			//scatter->setMarkerShape(QScatterSeries::MarkerShapeRectangle);
 			scatter->setMarkerSize(3.0);
 			scatter->setBorderColor(Qt::transparent);
