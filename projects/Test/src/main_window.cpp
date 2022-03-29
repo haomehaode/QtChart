@@ -490,7 +490,7 @@ ThirdDData(3.1885, 8.0106, 9.62)
 
 	histogram = new HistogramPlot();
 	QList<double> histogram_list{ 1,2,3,5,7,8,9,10,3,1,3,5,7,9,1,11,1,3,3,23,4,5,6,7,8,9,10 };
-	QList<double> histogram_list1{ 0.11,0.22,0.33,0.555,0.77 ,27};
+	QList<double> histogram_list1{ 0.11,0.22,0.33,0.555,0.77,8 ,27};
 	histogram->add_histogram(histogram_list,"1");
 	histogram->add_histogram(histogram_list1, "2");
 
@@ -498,22 +498,22 @@ ThirdDData(3.1885, 8.0106, 9.62)
 	QGridLayout* layout = new QGridLayout(this);
 	layout->setMargin(0);
 	layout->setSpacing(0);
-	layout->addWidget(line, 0, 0);
-	layout->addWidget(scatter, 0, 1);
-	layout->addWidget(probability, 0, 2);
-	layout->addWidget(pareto, 0, 3);
-	layout->addWidget(pie, 1, 0);
-	layout->addWidget(qq, 1, 1);
-	layout->addWidget(stock, 1, 2);
-	layout->addWidget(bar, 1, 3);
-	layout->addWidget(table, 2, 0);
-	layout->addWidget(radial, 2, 1);
-	layout->addWidget(boxbar, 2, 2);
-	layout->addWidget(interval, 2, 3);
-	layout->addWidget(color, 3, 0);
+	//layout->addWidget(line, 0, 0);
+	//layout->addWidget(scatter, 0, 1);
+	//layout->addWidget(probability, 0, 2);
+	//layout->addWidget(pareto, 0, 3);
+	//layout->addWidget(pie, 1, 0);
+	//layout->addWidget(qq, 1, 1);
+	//layout->addWidget(stock, 1, 2);
+	//layout->addWidget(bar, 1, 3);
+	//layout->addWidget(table, 2, 0);
+	//layout->addWidget(radial, 2, 1);
+	//layout->addWidget(boxbar, 2, 2);
+	//layout->addWidget(interval, 2, 3);
+	//layout->addWidget(color, 3, 0);
 	layout->addWidget(density, 3, 1);
-	layout->addWidget(radar, 3, 2);
-	layout->addWidget(histogram, 3, 3);
+	//layout->addWidget(radar, 3, 2);
+	//layout->addWidget(histogram, 3, 3);
 	w->setLayout(layout);
 	setCentralWidget(w);
 }

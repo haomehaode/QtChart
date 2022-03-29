@@ -16,10 +16,10 @@ void ColorBar::set_dock_area(LocationType area)
 	switch (m_area)
 	{
 	case Top:
-		margin.setTop(100);
+		margin.setTop(50);
 		break;
 	case Bottom:
-		margin.setBottom(100);
+		margin.setBottom(50);
 		break;
 	case Left:
 		margin.setLeft(100);
@@ -173,44 +173,21 @@ void ColorBar::draw_color_bar(QPainter* painter,QRectF rect)
 		break;
 	}
 
-	QColor m_light = colors.last();
-
-	QColor m_dark = colors.first();
-
-	int h1, s1, v1;
-	int h2, s2, v2;
-
-	m_light.getHsv(&h1, &s1, &v1);
-	m_dark.getHsv(&h2, &s2, &v2);
-
-	painter->save();
-	painter->setClipRect(rect);
-	painter->setClipping(true);
-
-	painter->fillRect(rect, m_dark);
-
-	const int sectionSize = 2;
-
-	int numIntervalls;
-	if (m_area == Right)
-		numIntervalls = rect.width() / sectionSize;
+	double numIntervalls;
+	if (m_area == Right|| m_area == Left)
+		numIntervalls = rect.height() / colors.size();
 	else
-		numIntervalls = rect.height() / sectionSize;
-	for (int i = 0; i < numIntervalls; i++)
-	{
-		QRect section;
-		if (m_area == Left)
-			section.setRect(rect.x() + i * sectionSize, rect.y(), sectionSize, rect.height());
+		numIntervalls = rect.width() / colors.size();
+
+	for (int i = 0; i < colors.size(); i++) {
+		QRectF section;
+		if (m_area == Right || m_area == Left)
+			section.setRect(rect.bottomLeft().x(), rect.bottomLeft().y() - i * numIntervalls, rect.width(), numIntervalls);
 		else
-			section.setRect(rect.x(), rect.y() + i * sectionSize, rect.width(), sectionSize);
+			section.setRect(rect.x() + i * numIntervalls, rect.y(), numIntervalls, rect.height());
 
-		const double ratio = i / (double)numIntervalls;
-
-		QColor c;
-		c.setHsv(h1 + qRound(ratio * (h2 - h1)),s1 + qRound(ratio * (s2 - s1)),v1 + qRound(ratio * (v2 - v1)));
-		painter->fillRect(section, c);
+		painter->fillRect(section, colors.at(i));
 	}
-	painter->restore();
 }
 
 void ColorBar::draw_color_title(QPainter* painter, QRectF rect)
