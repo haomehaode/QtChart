@@ -16,7 +16,8 @@ class HistogramItem :public GraphicsItem
 public:
 	HistogramItem();
 	void set_chart(QChart* chart);
-	void set_data(QList<QVector<QPointF>> data);
+	void set_data(QVector<double> data);
+	void set_index(int index);
 
 signals:
 	void signal_prepare_path() const;
@@ -30,8 +31,17 @@ protected:
 
 private:
 	QChart* m_chart = nullptr;
-	QList<QVector<QPointF>> m_data;
+	QVector<double> m_data;
+	int m_index = 0;
 	QPainterPath m_shape;
+};
+
+struct Histogram
+{
+	int m_index;
+	QList<HistogramItem*> m_list;
+	QList<double> m_value;
+	QScatterSeries* m_series = nullptr;
 };
 
 class GRAPH_EXPORT  HistogramPlot : public Plot
@@ -61,13 +71,11 @@ protected:
 
 private:
 	/** 名称和系列映射 */
-	QMap<QString, HistogramItem*> m_name2item;
+	QMap<QString, Histogram*> m_name2itemlist;
 	/** X 轴 */
 	QValueAxis* m_axisX = nullptr;
 	/** Y 轴 */
 	QValueAxis* m_axisY = nullptr;
-	/** 参考点 */
-	QScatterSeries* m_series = nullptr;
 	/** 间距 */
 	double m_interval = 2;
 	/** 总数 */

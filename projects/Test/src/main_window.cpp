@@ -490,8 +490,9 @@ ThirdDData(3.1885, 8.0106, 9.62)
 
 	histogram = new HistogramPlot();
 	QList<double> histogram_list{ 1,2,3,5,7,8,9,10,3,1,3,5,7,9,1,11,1,3,3,23,4,5,6,7,8,9,10 };
-	//QList<double> histogram_list{ 0.11,0.22,0.33,0.555,0.77 };
+	QList<double> histogram_list1{ 0.11,0.22,0.33,0.555,0.77 ,27};
 	histogram->add_histogram(histogram_list,"1");
+	histogram->add_histogram(histogram_list1, "2");
 
 	QWidget* w = new QWidget(this);
 	QGridLayout* layout = new QGridLayout(this);
