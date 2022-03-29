@@ -2,12 +2,10 @@
 
 #include "chart_view_preview.h"
 #include "util.h"
+#include "chart_view.h"
 
 #include <QMouseEvent>
 #include <QWidget>
-
-#include "Util.h"
-#include "chart_view.h"
 
 QMap<ChartView*, ChartViewPreview*> ChartViewPreview::s_view2preview;
 

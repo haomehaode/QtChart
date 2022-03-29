@@ -2,7 +2,7 @@
 
 #include "poly_line_preview.h"
 
-#include "Util.h"
+#include "util.h"
 #include "chart_view.h"
 #include "poly_line.h"
 
