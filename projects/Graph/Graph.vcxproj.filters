@@ -149,6 +149,9 @@
     <ClCompile Include="src\chart\radar_plot.cpp">
       <Filter>src\chart</Filter>
     </ClCompile>
+    <ClCompile Include="src\chart\waterfall_plot.cpp">
+      <Filter>src\chart</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\chart\axis_config.h">
@@ -200,6 +203,9 @@
       <Filter>src\chart</Filter>
     </QtMoc>
     <QtMoc Include="src\chart\radar_plot.h">
+      <Filter>src\chart</Filter>
+    </QtMoc>
+    <QtMoc Include="src\chart\waterfall_plot.h">
       <Filter>src\chart</Filter>
     </QtMoc>
   </ItemGroup>

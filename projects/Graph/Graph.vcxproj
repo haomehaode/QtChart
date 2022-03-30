@@ -15,6 +15,7 @@
     <QtMoc Include="src\chart\interval_plot.h" />
     <ClInclude Include="src\chart\color_bar.h" />
     <QtMoc Include="src\chart\radar_plot.h" />
+    <QtMoc Include="src\chart\waterfall_plot.h" />
     <ClInclude Include="src\graph\chart_view_preview.h" />
     <ClInclude Include="src\graph\graphics_item.h" />
     <ClInclude Include="src\graph\poly_line.h" />
@@ -69,6 +70,7 @@
     <ClCompile Include="src\chart\stock_plot.cpp" />
     <ClCompile Include="src\chart\table.cpp" />
     <ClCompile Include="src\chart\tool_tip.cpp" />
+    <ClCompile Include="src\chart\waterfall_plot.cpp" />
     <ClCompile Include="src\graph\chart_view_preview.cpp" />
     <ClCompile Include="src\graph\graphics_item.cpp" />
     <ClCompile Include="src\graph\poly_line.cpp" />

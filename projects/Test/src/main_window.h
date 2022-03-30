@@ -20,6 +20,7 @@ class ColorPlot;
 class DensityPlot;
 class RadarPlot;
 class HistogramPlot;
+class WaterfallPlot;
 
 class MainWindow : public QMainWindow
 {
@@ -60,6 +61,7 @@ private:
 	DensityPlot* density = nullptr;
 	RadarPlot* radar = nullptr;
 	HistogramPlot* histogram = nullptr;
+	WaterfallPlot* waterfall = nullptr;
 };
 
 #endif // MAIN_WINDOW_H
