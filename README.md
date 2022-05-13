@@ -1,4 +1,4 @@
-Chart
+QtChart
 
 基于QChart的部分封装二维数据可视化。
 
